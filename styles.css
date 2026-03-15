@@ -252,6 +252,7 @@ input, select, textarea {
     width: 100%;
 }
 
+/* === כפתור ראשי - כתום === */
 .btn--primary {
     background: var(--color-accent);
     color: var(--color-white);
@@ -265,6 +266,7 @@ input, select, textarea {
     box-shadow: 0 8px 24px rgba(232, 116, 12, 0.35);
 }
 
+/* === כפתור וואצאפ - ירוק === */
 .btn--whatsapp {
     background: var(--color-whatsapp);
     color: var(--color-white);
@@ -278,19 +280,26 @@ input, select, textarea {
     box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
 }
 
+/* =============================================
+   כפתור "קבל הצעת מחיר" - שינוי צבע רקע
+   =============================================
+   שונה מ-transparent לרקע כחול כהה מלא
+   ============================================= */
 .btn--outline {
-    background: transparent;
-    color: var(--color-primary);
-    border-color: var(--color-border);
+    background: var(--color-blue);
+    color: var(--color-white);
+    border-color: var(--color-blue);
 }
 
 .btn--outline:hover {
-    background: var(--color-primary);
+    background: var(--color-blue-light);
     color: var(--color-white);
-    border-color: var(--color-primary);
+    border-color: var(--color-blue-light);
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(43, 108, 176, 0.35);
 }
 
+/* === כפתור outline בהיר (על רקע כהה) === */
 .btn--outline-light {
     background: transparent;
     color: var(--color-white);
@@ -336,7 +345,7 @@ input, select, textarea {
     height: 100%;
 }
 
-/* Logo - Updated for Image */
+/* Logo */
 .header__logo {
     display: flex;
     align-items: center;
@@ -344,9 +353,6 @@ input, select, textarea {
     z-index: calc(var(--z-mobile-menu) + 1);
 }
 
-/* ============================================
-   תמונת לוגו בהדר
-   ============================================ */
 .header__logo-img {
     width: 40px;
     height: 40px;
@@ -472,7 +478,7 @@ input, select, textarea {
 
 
 /* ========================================
-   HERO SECTION - Updated with Background Image
+   HERO SECTION
    ======================================== */
 .hero {
     position: relative;
@@ -483,29 +489,19 @@ input, select, textarea {
     overflow: hidden;
 }
 
-/* ============================================
-   שינוי 4: תמונת רקע של ה-Hero
-   ============================================
-   שנה את הנתיב images/hero-bg.jpg לתמונה שלך
-   גודל מומלץ: 1920x1080 פיקסל
-   ============================================ */
 .hero__bg {
     position: absolute;
     inset: 0;
     z-index: 0;
-    /* === תמונת רקע - שנה את הנתיב === */
     background-image: url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
-/* שכבת כיסוי כהה מעל תמונת הרקע לקריאות טקסט */
 .hero__bg-overlay {
     position: absolute;
     inset: 0;
-    /* === שנה את האטימות לפי בהירות התמונה שלך === */
-    /* ערך גבוה יותר = כהה יותר (0.5-0.85) */
     background: linear-gradient(
         135deg,
         rgba(10, 22, 40, 0.82) 0%,
@@ -550,7 +546,7 @@ input, select, textarea {
     align-items: center;
 }
 
-/* Hero Content - Updated colors for dark background */
+/* Hero Content */
 .hero__badge {
     display: inline-flex;
     align-items: center;
@@ -609,9 +605,7 @@ input, select, textarea {
     gap: var(--space-4);
 }
 
-/* ============================================
-   שינוי 1: תמונת לוגו ב-Hero Visual
-   ============================================ */
+/* Hero Visual */
 .hero__visual {
     display: flex;
     justify-content: center;
@@ -638,21 +632,12 @@ input, select, textarea {
     padding: var(--space-4);
 }
 
-/* === תמונת הלוגו ב-Hero === */
 .hero__logo-img {
     width: 100%;
     max-width: 280px;
     height: auto;
     object-fit: contain;
     animation: float 6s ease-in-out infinite;
-    /* ============================
-       אם הלוגו על רקע שקוף:
-       filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
-       
-       אם הלוגו מרובע ללא שקיפות:
-       border-radius: var(--radius-xl);
-       box-shadow: var(--shadow-2xl);
-       ============================ */
     filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
 }
 
@@ -823,7 +808,7 @@ input, select, textarea {
 
 
 /* ========================================
-   WHY CHOOSE US SECTION - Updated with Image
+   WHY CHOOSE US SECTION
    ======================================== */
 .why-us {
     padding: var(--space-24) 0;
@@ -886,9 +871,7 @@ input, select, textarea {
     line-height: 1.6;
 }
 
-/* ============================================
-   שינוי 2: תמונה בריבוע "למה לבחור בנו"
-   ============================================ */
+/* Why Us Visual - Image */
 .why-us__visual {
     position: relative;
 }
@@ -902,7 +885,6 @@ input, select, textarea {
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     position: relative;
-    /* === יחס גובה-רוחב של התמונה === */
     aspect-ratio: 6 / 7;
 }
 
@@ -918,7 +900,6 @@ input, select, textarea {
     transform: scale(1.03);
 }
 
-/* === אם התמונה לא נטענה - תציג placeholder === */
 .why-us__image-wrapper::before {
     content: '';
     position: absolute;
@@ -963,7 +944,7 @@ input, select, textarea {
 
 
 /* ========================================
-   GALLERY SECTION - Updated with Real Images
+   GALLERY SECTION
    ======================================== */
 .gallery {
     padding: var(--space-24) 0;
@@ -982,7 +963,6 @@ input, select, textarea {
     border-radius: var(--radius-xl);
     overflow: hidden;
     cursor: pointer;
-    /* === רקע חלופי אם התמונה לא נטענה === */
     background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
 }
 
@@ -990,9 +970,6 @@ input, select, textarea {
     grid-column: span 2;
 }
 
-/* ============================================
-   שינוי 3: תמונות בגלריה
-   ============================================ */
 .gallery__image {
     width: 100%;
     height: 100%;
@@ -1404,7 +1381,6 @@ input, select, textarea {
     margin-bottom: var(--space-4);
 }
 
-/* === תמונת לוגו בפוטר === */
 .footer__logo-img {
     width: 36px;
     height: 36px;
