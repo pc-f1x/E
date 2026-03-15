@@ -19,6 +19,7 @@
     <meta property="og:description" content="מעבדה מקצועית לתיקון מנועים חשמליים, משאבות מים וכלי עבודה בבאר שבע והדרום. שירות אמין ומהיר לעסקים ומפעלים.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.electrictools.co.il/">
+    <meta property="og:image" content="images/og-image.jpg">
     <meta property="og:locale" content="he_IL">
     <meta property="og:site_name" content="ELECTRIC TOOLS">
 
@@ -37,6 +38,7 @@
         "@type": "LocalBusiness",
         "name": "ELECTRIC TOOLS",
         "description": "מעבדה מקצועית לתיקון מנועים חשמליים, משאבות מים וכלי עבודה בבאר שבע והדרום",
+        "image": "images/og-image.jpg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "הפועלים 19",
@@ -71,10 +73,20 @@
         <div class="container header__container">
             <!-- Logo -->
             <a href="#hero" class="header__logo" aria-label="ELECTRIC TOOLS - דף הבית">
-                <svg class="header__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect width="40" height="40" rx="8" fill="#E8740C"/>
-                    <path d="M22 6L10 22H18L16 34L30 18H22L22 6Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
-                </svg>
+                <!--
+                ============================================
+                תמונת לוגו בהדר - החלף את ה-SVG בתמונה שלך
+                גודל מומלץ: 40x40 פיקסל, פורמט PNG/SVG
+                ============================================
+                -->
+                <img
+                    src="images/logo.png"
+                    alt="ELECTRIC TOOLS - לוגו"
+                    class="header__logo-img"
+                    width="40"
+                    height="40"
+                    loading="eager"
+                >
                 <div class="header__logo-text">
                     <span class="header__logo-name">ELECTRIC TOOLS</span>
                     <span class="header__logo-tagline">ציוד חשמלי ותעשייתי</span>
@@ -108,8 +120,19 @@
     <!-- ========================================== -->
     <!-- HERO SECTION                               -->
     <!-- ========================================== -->
+    <!--
+    ============================================
+    שינוי 4: תמונת רקע ל-Hero Section
+    ============================================
+    החלף את הנתיב של תמונת הרקע בקובץ styles.css
+    בסלקטור .hero::before
+    גודל מומלץ: 1920x1080 פיקסל, פורמט JPG/WebP
+    שים את התמונה בנתיב: images/hero-bg.jpg
+    ============================================
+    -->
     <section class="hero" id="hero">
         <div class="hero__bg">
+            <div class="hero__bg-overlay"></div>
             <div class="hero__bg-pattern"></div>
         </div>
         <div class="container hero__container">
@@ -161,15 +184,23 @@
                 </div>
             </div>
 
-            <!-- Hero Visual -->
+            <!-- ============================================ -->
+            <!-- שינוי 1: תמונת לוגו במקום הברק הצף            -->
+            <!-- ============================================ -->
+            <!-- החלף את הנתיב images/hero-logo.png בתמונה שלך  -->
+            <!-- גודל מומלץ: 400x400 פיקסל, פורמט PNG (שקוף)   -->
+            <!-- ============================================ -->
             <div class="hero__visual" data-animate="fade-left">
                 <div class="hero__visual-card">
-                    <div class="hero__visual-icon">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="40" cy="40" r="38" stroke="#E8740C" stroke-width="2" stroke-dasharray="6 4" opacity="0.3"/>
-                            <circle cx="40" cy="40" r="28" fill="#0A1628" opacity="0.9"/>
-                            <path d="M44 24L30 42H38L36 56L52 38H44L44 24Z" fill="#E8740C"/>
-                        </svg>
+                    <div class="hero__visual-image">
+                        <img
+                            src="images/hero-logo.png"
+                            alt="ELECTRIC TOOLS - תיקון מנועים חשמליים ומשאבות בבאר שבע"
+                            class="hero__logo-img"
+                            width="300"
+                            height="300"
+                            loading="eager"
+                        >
                     </div>
                     <div class="hero__stats">
                         <div class="hero__stat">
@@ -384,15 +415,23 @@
                     </ul>
                 </div>
 
+                <!-- ============================================ -->
+                <!-- שינוי 2: תמונה בריבוע של "למה לבחור בנו"      -->
+                <!-- ============================================ -->
+                <!-- החלף את הנתיב images/workshop.jpg בתמונה שלך   -->
+                <!-- גודל מומלץ: 600x700 פיקסל, פורמט JPG/WebP     -->
+                <!-- ============================================ -->
                 <div class="why-us__visual" data-animate="fade-left">
                     <div class="why-us__image-container">
-                        <div class="why-us__image-placeholder">
-                            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <circle cx="60" cy="60" r="55" stroke="#E8740C" stroke-width="1" stroke-dasharray="8 6" opacity="0.4"/>
-                                <circle cx="60" cy="60" r="40" fill="#0A1628" opacity="0.05"/>
-                                <path d="M60 30L45 55h10l-3 20 18-25H60l0-20z" fill="#E8740C" opacity="0.8"/>
-                            </svg>
-                            <span>ELECTRIC TOOLS</span>
+                        <div class="why-us__image-wrapper">
+                            <img
+                                src="images/workshop.jpg"
+                                alt="מעבדת ELECTRIC TOOLS - תיקון ושיפוץ ציוד חשמלי ותעשייתי בבאר שבע"
+                                class="why-us__image"
+                                width="600"
+                                height="700"
+                                loading="lazy"
+                            >
                         </div>
                         <div class="why-us__floating-badge why-us__floating-badge--1">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8740C" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -411,6 +450,15 @@
     <!-- ========================================== -->
     <!-- GALLERY SECTION                            -->
     <!-- ========================================== -->
+    <!--
+    ============================================
+    שינוי 3: תמונות בגלריה
+    ============================================
+    החלף כל נתיב images/gallery-X.jpg בתמונות שלך
+    גודל מומלץ: 800x600 פיקסל, פורמט JPG/WebP
+    עבור פריטים רחבים (wide): 1200x600 פיקסל
+    ============================================
+    -->
     <section class="gallery" id="gallery">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
@@ -420,15 +468,16 @@
             </div>
 
             <div class="gallery__grid" data-animate="fade-up">
-                <!-- Gallery Item 1 -->
+                <!-- Gallery Item 1 - Wide -->
                 <div class="gallery__item gallery__item--wide">
-                    <div class="gallery__placeholder">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                            <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M24 4v6M24 38v6M4 24h6M38 24h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
+                    <img
+                        src="images/gallery-1.jpg"
+                        alt="שיפוץ מנוע חשמלי תעשייתי - ליפוף ושיפוץ מלא של מנוע 50 כוח סוס"
+                        class="gallery__image"
+                        width="1200"
+                        height="600"
+                        loading="lazy"
+                    >
                     <div class="gallery__overlay">
                         <h4>שיפוץ מנוע חשמלי תעשייתי</h4>
                         <p>ליפוף ושיפוץ מלא של מנוע 50 כ"ס</p>
@@ -437,12 +486,14 @@
 
                 <!-- Gallery Item 2 -->
                 <div class="gallery__item">
-                    <div class="gallery__placeholder">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <path d="M24 4v10M18 14h12v4c0 6-3 10-6 14-3-4-6-8-6-14v-4z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                            <path d="M20 38h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
+                    <img
+                        src="images/gallery-2.jpg"
+                        alt="תיקון משאבה טבולה - החלפת אטמים ושיפוץ מלא"
+                        class="gallery__image"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                    >
                     <div class="gallery__overlay">
                         <h4>תיקון משאבה טבולה</h4>
                         <p>החלפת אטמים ושיפוץ מלא</p>
@@ -451,14 +502,14 @@
 
                 <!-- Gallery Item 3 -->
                 <div class="gallery__item">
-                    <div class="gallery__placeholder">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <rect x="12" y="8" width="24" height="32" rx="3" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="18" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            <line x1="18" y1="22" x2="30" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            <line x1="18" y1="28" x2="26" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
+                    <img
+                        src="images/gallery-3.jpg"
+                        alt="תיקון כלי עבודה - תיקון מקדחת תעשייתית"
+                        class="gallery__image"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                    >
                     <div class="gallery__overlay">
                         <h4>תיקון כלי עבודה</h4>
                         <p>תיקון מקדחת תעשייתית</p>
@@ -467,29 +518,30 @@
 
                 <!-- Gallery Item 4 -->
                 <div class="gallery__item">
-                    <div class="gallery__placeholder">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5"/>
-                            <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M24 8v6M24 34v6M8 24h6M34 24h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
+                    <img
+                        src="images/gallery-4.jpg"
+                        alt="ליפוף מנוע חשמלי - ליפוף מנוע תלת-פאזי"
+                        class="gallery__image"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                    >
                     <div class="gallery__overlay">
                         <h4>ליפוף מנוע חשמלי</h4>
                         <p>ליפוף מנוע תלת-פאזי</p>
                     </div>
                 </div>
 
-                <!-- Gallery Item 5 -->
+                <!-- Gallery Item 5 - Wide -->
                 <div class="gallery__item gallery__item--wide">
-                    <div class="gallery__placeholder">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <rect x="6" y="14" width="36" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M6 20h36" stroke="currentColor" stroke-width="1.5"/>
-                            <circle cx="16" cy="28" r="3" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M24 26h12M24 30h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
+                    <img
+                        src="images/gallery-5.jpg"
+                        alt="תחזוקת ציוד מטבח תעשייתי - שירות תחזוקה למפעל מזון"
+                        class="gallery__image"
+                        width="1200"
+                        height="600"
+                        loading="lazy"
+                    >
                     <div class="gallery__overlay">
                         <h4>תחזוקת ציוד מטבח תעשייתי</h4>
                         <p>שירות תחזוקה למפעל מזון</p>
@@ -498,13 +550,14 @@
 
                 <!-- Gallery Item 6 -->
                 <div class="gallery__item">
-                    <div class="gallery__placeholder">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <path d="M14 34L8 44h32l-6-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M10 34V22l14-12 14 12v12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                            <rect x="18" y="26" width="12" height="8" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                    </div>
+                    <img
+                        src="images/gallery-6.jpg"
+                        alt="שירות שטח - תיקון משאבות באתר לקוח"
+                        class="gallery__image"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                    >
                     <div class="gallery__overlay">
                         <h4>שירות שטח</h4>
                         <p>תיקון משאבות באתר לקוח</p>
@@ -513,13 +566,14 @@
 
                 <!-- Gallery Item 7 -->
                 <div class="gallery__item">
-                    <div class="gallery__placeholder">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <circle cx="24" cy="20" r="14" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M24 10v10l6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M16 40h16M20 36h8v4H20z" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                    </div>
+                    <img
+                        src="images/gallery-7.jpg"
+                        alt="אחזקה מונעת - תוכנית אחזקה למפעל"
+                        class="gallery__image"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                    >
                     <div class="gallery__overlay">
                         <h4>אחזקה מונעת</h4>
                         <p>תוכנית אחזקה למפעל</p>
@@ -528,11 +582,14 @@
 
                 <!-- Gallery Item 8 -->
                 <div class="gallery__item">
-                    <div class="gallery__placeholder">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <path d="M30 6L18 22h8l-4 20 16-22h-10L30 6z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                        </svg>
-                    </div>
+                    <img
+                        src="images/gallery-8.jpg"
+                        alt="תיקון לוחות חשמל - שיפוץ ושדרוג לוח חשמל תעשייתי"
+                        class="gallery__image"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                    >
                     <div class="gallery__overlay">
                         <h4>תיקון לוחות חשמל</h4>
                         <p>שיפוץ ושדרוג לוח חשמל תעשייתי</p>
@@ -707,7 +764,6 @@
             <div class="contact__wrapper">
                 <!-- Contact Info -->
                 <div class="contact__info" data-animate="fade-right">
-                    <!-- Address -->
                     <div class="contact__info-item">
                         <div class="contact__info-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -718,7 +774,6 @@
                         </div>
                     </div>
 
-                    <!-- Phone -->
                     <div class="contact__info-item">
                         <div class="contact__info-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -730,7 +785,6 @@
                         </div>
                     </div>
 
-                    <!-- Email -->
                     <div class="contact__info-item">
                         <div class="contact__info-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -741,7 +795,6 @@
                         </div>
                     </div>
 
-                    <!-- Hours -->
                     <div class="contact__info-item">
                         <div class="contact__info-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -754,7 +807,6 @@
                         </div>
                     </div>
 
-                    <!-- Quick Action Buttons -->
                     <div class="contact__quick-actions">
                         <a href="tel:0737432323" class="btn btn--primary btn--block">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -816,10 +868,14 @@
             <div class="footer__top">
                 <div class="footer__brand">
                     <a href="#hero" class="footer__logo" aria-label="ELECTRIC TOOLS">
-                        <svg class="footer__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <rect width="40" height="40" rx="8" fill="#E8740C"/>
-                            <path d="M22 6L10 22H18L16 34L30 18H22L22 6Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
-                        </svg>
+                        <img
+                            src="images/logo.png"
+                            alt="ELECTRIC TOOLS - לוגו"
+                            class="footer__logo-img"
+                            width="36"
+                            height="36"
+                            loading="lazy"
+                        >
                         <span>ELECTRIC TOOLS</span>
                     </a>
                     <p class="footer__desc">מעבדה מקצועית לתיקון ושיפוץ ציוד חשמלי ותעשייתי בבאר שבע והדרום. שירות אמין ומקצועי.</p>
@@ -874,17 +930,12 @@
     <!-- FLOATING ACTION BUTTONS                    -->
     <!-- ========================================== -->
     <div class="floating-buttons" id="floatingButtons">
-        <!-- Phone Button -->
         <a href="tel:0528945500" class="floating-btn floating-btn--phone" aria-label="התקשר אלינו">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </a>
-
-        <!-- WhatsApp Button -->
         <a href="https://wa.me/972528945500" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn--whatsapp" aria-label="שלח הודעת וואצפ">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
-
-        <!-- Email Button -->
         <a href="mailto:Electrictools@outlook.co.il" class="floating-btn floating-btn--email" aria-label="שלח אימייל">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
