@@ -1,6 +1,6 @@
 /* ============================================================
    ELECTRIC TOOLS - Professional Website Stylesheet
-   Industrial Modern Design - Updated with Image Support
+   Industrial Modern Design - MOBILE BUGS FIXED
    ============================================================ */
 
 /* ========================================
@@ -83,7 +83,6 @@
     --transition-fast: 150ms ease;
     --transition-base: 250ms ease;
     --transition-slow: 350ms ease;
-    --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     /* Z-index */
     --z-header: 1000;
@@ -109,11 +108,13 @@
     box-sizing: border-box;
 }
 
+/* ===== FIX 1: מניעת גלילה אופקית ===== */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
     -webkit-text-size-adjust: 100%;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -125,10 +126,19 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* ===== FIX 2: מניעת גלילה אופקית מוחלטת ===== */
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
 }
 
 body.menu-open {
     overflow: hidden;
+    /* ===== FIX 3: נעילת גוף העמוד כשתפריט פתוח ===== */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
 }
 
 img {
@@ -158,6 +168,8 @@ button {
 input, select, textarea {
     font-family: inherit;
     font-size: inherit;
+    /* ===== FIX 4: מניעת זום אוטומטי באייפון ===== */
+    font-size: 16px;
 }
 
 :focus-visible {
@@ -174,6 +186,8 @@ input, select, textarea {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-padding);
+    /* ===== FIX 5: מניעת חריגה של קונטיינר ===== */
+    overflow-x: hidden;
 }
 
 
@@ -209,6 +223,9 @@ input, select, textarea {
     color: var(--color-primary);
     line-height: 1.2;
     margin-bottom: var(--space-4);
+    /* ===== FIX 6: מניעת שבירת מילים ארוכות ===== */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .section-header__text {
@@ -236,6 +253,8 @@ input, select, textarea {
     cursor: pointer;
     text-align: center;
     line-height: 1.5;
+    /* ===== FIX 7: מניעת כפתורים חורגים ===== */
+    max-width: 100%;
 }
 
 .btn--lg {
@@ -252,7 +271,6 @@ input, select, textarea {
     width: 100%;
 }
 
-/* === כפתור ראשי - כתום === */
 .btn--primary {
     background: var(--color-accent);
     color: var(--color-white);
@@ -266,7 +284,6 @@ input, select, textarea {
     box-shadow: 0 8px 24px rgba(232, 116, 12, 0.35);
 }
 
-/* === כפתור וואצאפ - ירוק === */
 .btn--whatsapp {
     background: var(--color-whatsapp);
     color: var(--color-white);
@@ -280,11 +297,6 @@ input, select, textarea {
     box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
 }
 
-/* =============================================
-   כפתור "קבל הצעת מחיר" - שינוי צבע רקע
-   =============================================
-   שונה מ-transparent לרקע כחול כהה מלא
-   ============================================= */
 .btn--outline {
     background: var(--color-blue);
     color: var(--color-white);
@@ -299,7 +311,6 @@ input, select, textarea {
     box-shadow: 0 8px 24px rgba(43, 108, 176, 0.35);
 }
 
-/* === כפתור outline בהיר (על רקע כהה) === */
 .btn--outline-light {
     background: transparent;
     color: var(--color-white);
@@ -343,6 +354,8 @@ input, select, textarea {
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    /* ===== FIX 8: ביטול overflow hidden בהדר ===== */
+    overflow: visible;
 }
 
 /* Logo */
@@ -351,6 +364,8 @@ input, select, textarea {
     align-items: center;
     gap: var(--space-3);
     z-index: calc(var(--z-mobile-menu) + 1);
+    /* ===== FIX 9: מניעת כיווץ הלוגו ===== */
+    flex-shrink: 0;
 }
 
 .header__logo-img {
@@ -418,7 +433,7 @@ input, select, textarea {
     transform: translateY(-1px);
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu Button */
 .header__burger {
     display: none;
     flex-direction: column;
@@ -430,6 +445,10 @@ input, select, textarea {
     z-index: calc(var(--z-mobile-menu) + 1);
     border-radius: var(--radius-md);
     transition: background var(--transition-base);
+    /* ===== FIX 10: כפתור המבורגר תמיד מעל ===== */
+    position: relative;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__burger:hover {
@@ -442,7 +461,7 @@ input, select, textarea {
     height: 2px;
     background: var(--color-primary);
     border-radius: 2px;
-    transition: all var(--transition-base);
+    transition: all 0.3s ease;
     transform-origin: center;
 }
 
@@ -459,21 +478,23 @@ input, select, textarea {
     transform: rotate(-45deg) translate(5.5px, -5.5px);
 }
 
-/* Mobile Overlay */
+/* ===== FIX 11: Mobile Overlay - תיקון מלא ===== */
 .mobile-overlay {
-    display: none;
     position: fixed;
     inset: 0;
     background: rgba(10, 22, 40, 0.6);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: var(--z-overlay);
     opacity: 0;
-    transition: opacity var(--transition-base);
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-overlay.active {
-    display: block;
     opacity: 1;
+    visibility: visible;
 }
 
 
@@ -486,6 +507,7 @@ input, select, textarea {
     display: flex;
     align-items: center;
     padding: calc(var(--header-height) + var(--space-12)) 0 var(--space-12);
+    /* ===== FIX 12: מניעת חריגה ב-Hero ===== */
     overflow: hidden;
 }
 
@@ -515,6 +537,8 @@ input, select, textarea {
     position: absolute;
     inset: 0;
     z-index: 2;
+    /* ===== FIX 13: מניעת חריגה של הפטרן ===== */
+    overflow: hidden;
     background-image:
         radial-gradient(circle at 20% 50%, rgba(232, 116, 12, 0.08) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
@@ -530,6 +554,8 @@ input, select, textarea {
     border-radius: 50%;
     border: 1px solid rgba(232, 116, 12, 0.1);
     animation: hero-pulse 8s ease-in-out infinite;
+    /* ===== FIX 14: הגבלת הפטרן לגבולות הסקשן ===== */
+    pointer-events: none;
 }
 
 @keyframes hero-pulse {
@@ -560,6 +586,11 @@ input, select, textarea {
     border-radius: var(--radius-full);
     margin-bottom: var(--space-6);
     backdrop-filter: blur(8px);
+    /* ===== FIX 15: מניעת שבירת הבאדג' ===== */
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .hero__title {
@@ -568,6 +599,9 @@ input, select, textarea {
     color: var(--color-white);
     line-height: 1.15;
     margin-bottom: var(--space-6);
+    /* ===== FIX 16: מניעת שבירת כותרת ===== */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .hero__title-highlight {
@@ -712,6 +746,8 @@ input, select, textarea {
 .services {
     padding: var(--space-24) 0;
     background: var(--color-bg);
+    /* ===== FIX 17: מניעת חריגה בסקשנים ===== */
+    overflow: hidden;
 }
 
 .services__grid {
@@ -813,6 +849,8 @@ input, select, textarea {
 .why-us {
     padding: var(--space-24) 0;
     background: var(--color-bg-alt);
+    /* ===== FIX 18: מניעת חריגה של באדג'ים צפים ===== */
+    overflow: hidden;
 }
 
 .why-us__wrapper {
@@ -871,7 +909,7 @@ input, select, textarea {
     line-height: 1.6;
 }
 
-/* Why Us Visual - Image */
+/* Why Us Visual */
 .why-us__visual {
     position: relative;
 }
@@ -923,6 +961,7 @@ input, select, textarea {
     color: var(--color-primary);
     animation: badge-float 4s ease-in-out infinite;
     z-index: 2;
+    white-space: nowrap;
 }
 
 .why-us__floating-badge--1 {
@@ -949,6 +988,7 @@ input, select, textarea {
 .gallery {
     padding: var(--space-24) 0;
     background: var(--color-bg);
+    overflow: hidden;
 }
 
 .gallery__grid {
@@ -1024,6 +1064,7 @@ input, select, textarea {
 .service-area {
     padding: var(--space-24) 0;
     background: var(--color-bg-alt);
+    overflow: hidden;
 }
 
 .service-area__wrapper {
@@ -1099,6 +1140,7 @@ input, select, textarea {
 .faq {
     padding: var(--space-24) 0;
     background: var(--color-bg);
+    overflow: hidden;
 }
 
 .faq__list {
@@ -1138,6 +1180,7 @@ input, select, textarea {
     text-align: right;
     transition: color var(--transition-base);
     gap: var(--space-4);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .faq__question:hover {
@@ -1157,7 +1200,7 @@ input, select, textarea {
 .faq__answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--transition-slow), padding var(--transition-slow);
+    transition: max-height var(--transition-slow);
 }
 
 .faq__answer p {
@@ -1223,6 +1266,7 @@ input, select, textarea {
 .contact {
     padding: var(--space-24) 0;
     background: var(--color-bg-alt);
+    overflow: hidden;
 }
 
 .contact__wrapper {
@@ -1314,7 +1358,7 @@ input, select, textarea {
 .contact__input {
     width: 100%;
     padding: var(--space-3) var(--space-4);
-    font-size: var(--text-base);
+    font-size: 16px;
     color: var(--color-text);
     background: var(--color-bg-alt);
     border: 2px solid var(--color-border);
@@ -1364,6 +1408,7 @@ input, select, textarea {
     background: var(--color-primary);
     color: rgba(255, 255, 255, 0.7);
     padding: var(--space-16) 0 0;
+    overflow: hidden;
 }
 
 .footer__top {
@@ -1430,6 +1475,8 @@ input, select, textarea {
     gap: var(--space-2);
     font-size: var(--text-sm);
     margin-bottom: var(--space-3);
+    /* ===== FIX 19: מניעת שבירת שורות בפוטר ===== */
+    word-break: break-all;
 }
 
 .footer__contact a:hover {
@@ -1475,6 +1522,7 @@ input, select, textarea {
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-base);
     position: relative;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .floating-btn:hover {
@@ -1617,6 +1665,7 @@ input, select, textarea {
         margin: 0 auto;
     }
 
+    /* ===== FIX 20: באדג'ים צפים לא יוצאים מהמסך ===== */
     .why-us__floating-badge--1 {
         left: var(--space-4);
     }
@@ -1647,7 +1696,7 @@ input, select, textarea {
         gap: var(--space-8);
     }
 
-    /* Show Hamburger Menu */
+    /* ===== FIX 21: תפריט מובייל - תיקון מלא ===== */
     .header__burger {
         display: flex;
     }
@@ -1659,12 +1708,16 @@ input, select, textarea {
         width: 80%;
         max-width: 360px;
         height: 100vh;
+        height: 100dvh; /* Dynamic viewport height - תיקון לאייפון */
         background: var(--color-white);
         z-index: var(--z-mobile-menu);
         padding: calc(var(--header-height) + var(--space-8)) var(--space-8) var(--space-8);
-        transition: right var(--transition-slow);
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        /* ===== FIX 22: מניעת שינוי רוחב בזמן אנימציה ===== */
+        will-change: right;
     }
 
     .header__nav.active {
@@ -1683,6 +1736,7 @@ input, select, textarea {
         font-size: var(--text-lg);
         text-align: right;
         border-radius: var(--radius-lg);
+        -webkit-tap-highlight-color: transparent;
     }
 
     .header__nav-cta {
@@ -1719,8 +1773,10 @@ input, select, textarea {
         font-size: var(--text-2xl);
     }
 
+    /* ===== FIX 23: כפתורים מלאים ברוחב במובייל ===== */
     .hero__buttons {
         flex-direction: column;
+        width: 100%;
     }
 
     .hero__buttons .btn {
@@ -1756,8 +1812,32 @@ input, select, textarea {
         grid-column: span 1;
     }
 
+    /* ===== FIX 24: גלריה - overlay נראה במובייל ===== */
+    .gallery__overlay {
+        opacity: 1;
+        transform: translateY(0);
+        background: linear-gradient(
+            to top,
+            rgba(10, 22, 40, 0.85) 0%,
+            transparent 60%
+        );
+    }
+
+    .gallery__overlay h4 {
+        font-size: var(--text-base);
+    }
+
+    .gallery__overlay p {
+        font-size: var(--text-xs);
+    }
+
     .service-area__cities {
         justify-content: center;
+    }
+
+    .service-area__map-placeholder {
+        min-height: 260px;
+        padding: var(--space-8);
     }
 
     .cta__buttons {
@@ -1783,6 +1863,7 @@ input, select, textarea {
         gap: var(--space-8);
     }
 
+    /* ===== FIX 25: כפתורים צפים קטנים יותר במובייל ===== */
     .floating-btn {
         width: 50px;
         height: 50px;
@@ -1791,6 +1872,26 @@ input, select, textarea {
     .floating-buttons {
         bottom: var(--space-4);
         left: var(--space-4);
+    }
+
+    /* ===== FIX 26: באדג'ים צפים - סתירת חריגה במובייל ===== */
+    .why-us__floating-badge--1 {
+        left: var(--space-2);
+        top: var(--space-4);
+        font-size: var(--text-xs);
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .why-us__floating-badge--2 {
+        right: var(--space-2);
+        bottom: var(--space-4);
+        font-size: var(--text-xs);
+        padding: var(--space-2) var(--space-3);
+    }
+
+    /* ===== FIX 27: מניעת חריגת הפטרן ===== */
+    .hero__bg-pattern::before {
+        display: none;
     }
 }
 
@@ -1807,12 +1908,21 @@ input, select, textarea {
         font-size: var(--text-xl);
     }
 
+    .hero__badge {
+        font-size: var(--text-xs);
+        padding: var(--space-1) var(--space-3);
+    }
+
     .hero__stats {
         gap: var(--space-2);
     }
 
     .hero__stat-number {
         font-size: var(--text-xl);
+    }
+
+    .hero__stat-label {
+        font-size: 0.625rem;
     }
 
     .hero__logo-img {
@@ -1833,11 +1943,30 @@ input, select, textarea {
         padding: 0 var(--space-4) var(--space-4);
         font-size: var(--text-sm);
     }
+
+    /* ===== FIX 28: לוגו קטן יותר במסכים קטנים ===== */
+    .header__logo-name {
+        font-size: var(--text-base);
+    }
+
+    .header__logo-tagline {
+        display: none;
+    }
+
+    .header__logo-img {
+        width: 34px;
+        height: 34px;
+    }
+
+    /* ===== FIX 29: הסתרת באדג'ים צפים במסכים קטנים מאוד ===== */
+    .why-us__floating-badge {
+        display: none;
+    }
 }
 
 
 /* ========================================
-   RESPONSIVE - Large Screens (min-width: 1440px)
+   RESPONSIVE - Large Screens
    ======================================== */
 @media (min-width: 1440px) {
     :root {
