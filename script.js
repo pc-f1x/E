@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * ELECTRIC TOOLS - Professional Website JavaScript
- * Updated with image support
+ * MOBILE BUGS FIXED VERSION
  * ============================================================
  */
 
@@ -25,6 +25,9 @@
         counters: document.querySelectorAll('[data-count]'),
     };
 
+    // ===== FIX: שמירת מיקום הגלילה כשתפריט נפתח =====
+    let scrollPosition = 0;
+
 
     // ========================================
     // UTILITY FUNCTIONS
@@ -45,6 +48,7 @@
         const scrollThreshold = 50;
 
         function handleScroll() {
+            if (document.body.classList.contains('menu-open')) return;
             const scrolled = window.scrollY > scrollThreshold;
             DOM.header.classList.toggle('header--scrolled', scrolled);
         }
@@ -55,20 +59,24 @@
 
 
     // ========================================
-    // MOBILE MENU
+    // MOBILE MENU - תיקון מלא
     // ========================================
     function initMobileMenu() {
         const { burgerBtn, mainNav, mobileOverlay } = DOM;
 
-        function toggleMenu() {
-            const isOpen = mainNav.classList.contains('active');
+        function openMenu() {
+            // ===== FIX: שמירת מיקום גלילה לפני נעילה =====
+            scrollPosition = window.scrollY;
 
-            burgerBtn.classList.toggle('active');
-            mainNav.classList.toggle('active');
-            mobileOverlay.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
+            burgerBtn.classList.add('active');
+            mainNav.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.classList.add('menu-open');
 
-            burgerBtn.setAttribute('aria-expanded', !isOpen);
+            // ===== FIX: שמירת מיקום הגלילה =====
+            document.body.style.top = `-${scrollPosition}px`;
+
+            burgerBtn.setAttribute('aria-expanded', 'true');
         }
 
         function closeMenu() {
@@ -76,21 +84,61 @@
             mainNav.classList.remove('active');
             mobileOverlay.classList.remove('active');
             document.body.classList.remove('menu-open');
+
+            // ===== FIX: חזרה למיקום הגלילה המקורי =====
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+
             burgerBtn.setAttribute('aria-expanded', 'false');
         }
 
-        burgerBtn.addEventListener('click', toggleMenu);
-        mobileOverlay.addEventListener('click', closeMenu);
+        function toggleMenu() {
+            if (mainNav.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
 
-        DOM.navLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
+        // Toggle on burger click
+        burgerBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            toggleMenu();
         });
 
-        document.addEventListener('keydown', (e) => {
+        // Close on overlay click
+        mobileOverlay.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeMenu();
+        });
+
+        // Close on nav link click
+        DOM.navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                if (mainNav.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && mainNav.classList.contains('active')) {
                 closeMenu();
             }
         });
+
+        // ===== FIX: מניעת גלילה בתוך overlay =====
+        mobileOverlay.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, { passive: false });
+
+        // ===== FIX: סגירת תפריט בשינוי גודל מסך =====
+        window.addEventListener('resize', debounce(function () {
+            if (window.innerWidth > 1024 && mainNav.classList.contains('active')) {
+                closeMenu();
+            }
+        }, 200));
     }
 
 
@@ -107,7 +155,15 @@
                 if (!target) return;
 
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
+
+                // ===== FIX: חישוב מיקום מדויק עם offset =====
+                const headerHeight = DOM.header.offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             });
         });
     }
@@ -120,6 +176,8 @@
         const sections = document.querySelectorAll('section[id]');
 
         function updateActiveLink() {
+            if (document.body.classList.contains('menu-open')) return;
+
             const scrollPos = window.scrollY + window.innerHeight / 3;
 
             sections.forEach(section => {
@@ -151,7 +209,7 @@
             const question = item.querySelector('.faq__question');
             const answer = item.querySelector('.faq__answer');
 
-            question.addEventListener('click', () => {
+            question.addEventListener('click', function () {
                 const isActive = item.classList.contains('active');
 
                 // Close all FAQ items
@@ -196,7 +254,7 @@
             },
             {
                 threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px',
+                rootMargin: '0px 0px -30px 0px',
             }
         );
 
@@ -257,6 +315,7 @@
         const showThreshold = 400;
 
         function handleScroll() {
+            if (document.body.classList.contains('menu-open')) return;
             const visible = window.scrollY > showThreshold;
             DOM.floatingButtons.classList.toggle('visible', visible);
         }
@@ -284,7 +343,6 @@
                 input.classList.remove('error', 'success');
             });
 
-            // Validate name
             if (!name.value.trim()) {
                 name.classList.add('error');
                 isValid = false;
@@ -292,7 +350,6 @@
                 name.classList.add('success');
             }
 
-            // Validate phone
             const phoneRegex = /^[\d\-+() ]{9,15}$/;
             if (!phone.value.trim() || !phoneRegex.test(phone.value.trim())) {
                 phone.classList.add('error');
@@ -301,7 +358,6 @@
                 phone.classList.add('success');
             }
 
-            // Validate email (optional)
             if (email.value.trim()) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(email.value.trim())) {
@@ -327,7 +383,6 @@
 
                 window.open(`https://wa.me/972528945500?text=${whatsappMessage}`, '_blank');
 
-                // Show success feedback
                 const submitBtn = DOM.contactForm.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
                 submitBtn.innerHTML = `
@@ -349,7 +404,6 @@
             }
         });
 
-        // Real-time validation
         const inputs = DOM.contactForm.querySelectorAll('.contact__input');
         inputs.forEach(input => {
             input.addEventListener('blur', function () {
@@ -369,23 +423,15 @@
     // ========================================
     // IMAGE ERROR HANDLING
     // ========================================
-    /**
-     * Handles broken images gracefully
-     * Shows placeholder when image fails to load
-     */
     function initImageErrorHandling() {
         const allImages = document.querySelectorAll('img');
 
         allImages.forEach(img => {
             img.addEventListener('error', function () {
-                // Don't process if already handled
                 if (this.dataset.errorHandled) return;
                 this.dataset.errorHandled = 'true';
-
-                // Hide the broken image
                 this.style.display = 'none';
 
-                // Add a placeholder class to parent
                 const parent = this.parentElement;
                 if (parent) {
                     parent.classList.add('image-fallback');
@@ -396,7 +442,7 @@
 
 
     // ========================================
-    // GALLERY LIGHTBOX (Simple)
+    // GALLERY LIGHTBOX
     // ========================================
     function initGalleryLightbox() {
         const galleryItems = document.querySelectorAll('.gallery__item');
@@ -406,18 +452,10 @@
                 const img = this.querySelector('.gallery__image');
                 if (!img || !img.src) return;
 
-                // Create lightbox
-                const lightbox = document.createElement('div');
-                lightbox.className = 'lightbox';
-                lightbox.innerHTML = `
-                    <div class="lightbox__backdrop"></div>
-                    <div class="lightbox__content">
-                        <img src="${img.src}" alt="${img.alt}" class="lightbox__image">
-                        <button class="lightbox__close" aria-label="סגור">&times;</button>
-                    </div>
-                `;
+                // ===== FIX: מניעת פתיחת lightbox במובייל אם אין תמונה =====
+                if (img.style.display === 'none') return;
 
-                // Add styles dynamically
+                const lightbox = document.createElement('div');
                 lightbox.style.cssText = `
                     position: fixed;
                     inset: 0;
@@ -425,69 +463,37 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 2rem;
-                    animation: lightbox-in 0.3s ease;
+                    padding: 1rem;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
                 `;
 
-                const backdrop = lightbox.querySelector('.lightbox__backdrop');
-                backdrop.style.cssText = `
-                    position: absolute;
-                    inset: 0;
-                    background: rgba(0, 0, 0, 0.9);
-                    backdrop-filter: blur(8px);
-                `;
-
-                const content = lightbox.querySelector('.lightbox__content');
-                content.style.cssText = `
-                    position: relative;
-                    max-width: 90vw;
-                    max-height: 90vh;
-                    z-index: 1;
-                `;
-
-                const lightboxImg = lightbox.querySelector('.lightbox__image');
-                lightboxImg.style.cssText = `
-                    max-width: 100%;
-                    max-height: 85vh;
-                    object-fit: contain;
-                    border-radius: 12px;
-                    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-                `;
-
-                const closeBtn = lightbox.querySelector('.lightbox__close');
-                closeBtn.style.cssText = `
-                    position: absolute;
-                    top: -40px;
-                    left: 0;
-                    background: none;
-                    border: none;
-                    color: white;
-                    font-size: 2rem;
-                    cursor: pointer;
-                    width: 40px;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    transition: background 0.2s;
+                lightbox.innerHTML = `
+                    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);" class="lb-backdrop"></div>
+                    <div style="position:relative;max-width:90vw;max-height:90vh;z-index:1;">
+                        <img src="${img.src}" alt="${img.alt}" style="max-width:100%;max-height:85vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+                        <button style="position:absolute;top:-40px;left:0;background:rgba(255,255,255,0.15);border:none;color:white;font-size:1.5rem;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;-webkit-tap-highlight-color:transparent;" class="lb-close">&times;</button>
+                    </div>
                 `;
 
                 document.body.appendChild(lightbox);
                 document.body.style.overflow = 'hidden';
 
-                // Close handlers
+                // Trigger animation
+                requestAnimationFrame(() => {
+                    lightbox.style.opacity = '1';
+                });
+
                 function closeLightbox() {
                     lightbox.style.opacity = '0';
-                    lightbox.style.transition = 'opacity 0.3s ease';
                     setTimeout(() => {
                         lightbox.remove();
                         document.body.style.overflow = '';
                     }, 300);
                 }
 
-                closeBtn.addEventListener('click', closeLightbox);
-                backdrop.addEventListener('click', closeLightbox);
+                lightbox.querySelector('.lb-close').addEventListener('click', closeLightbox);
+                lightbox.querySelector('.lb-backdrop').addEventListener('click', closeLightbox);
                 document.addEventListener('keydown', function handler(e) {
                     if (e.key === 'Escape') {
                         closeLightbox();
