@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * ELECTRIC TOOLS - Professional Website JavaScript
- * MOBILE BUGS FIXED VERSION
+ * ALL MOBILE BUGS FIXED VERSION
  * ============================================================
  */
 
@@ -25,7 +25,6 @@
         counters: document.querySelectorAll('[data-count]'),
     };
 
-    // ===== FIX: שמירת מיקום הגלילה כשתפריט נפתח =====
     let scrollPosition = 0;
 
 
@@ -42,15 +41,14 @@
 
 
     // ========================================
-    // HEADER - Sticky & Scroll Detection
+    // HEADER
     // ========================================
     function initHeader() {
         const scrollThreshold = 50;
 
         function handleScroll() {
             if (document.body.classList.contains('menu-open')) return;
-            const scrolled = window.scrollY > scrollThreshold;
-            DOM.header.classList.toggle('header--scrolled', scrolled);
+            DOM.header.classList.toggle('header--scrolled', window.scrollY > scrollThreshold);
         }
 
         window.addEventListener('scroll', debounce(handleScroll, 10));
@@ -59,21 +57,18 @@
 
 
     // ========================================
-    // MOBILE MENU - תיקון מלא
+    // MOBILE MENU - FIX מלא
     // ========================================
     function initMobileMenu() {
         const { burgerBtn, mainNav, mobileOverlay } = DOM;
 
         function openMenu() {
-            // ===== FIX: שמירת מיקום גלילה לפני נעילה =====
             scrollPosition = window.scrollY;
 
             burgerBtn.classList.add('active');
             mainNav.classList.add('active');
             mobileOverlay.classList.add('active');
             document.body.classList.add('menu-open');
-
-            // ===== FIX: שמירת מיקום הגלילה =====
             document.body.style.top = `-${scrollPosition}px`;
 
             burgerBtn.setAttribute('aria-expanded', 'true');
@@ -84,15 +79,19 @@
             mainNav.classList.remove('active');
             mobileOverlay.classList.remove('active');
             document.body.classList.remove('menu-open');
-
-            // ===== FIX: חזרה למיקום הגלילה המקורי =====
             document.body.style.top = '';
-            window.scrollTo(0, scrollPosition);
+
+            // חזרה למיקום הגלילה המקורי
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'instant'
+            });
 
             burgerBtn.setAttribute('aria-expanded', 'false');
         }
 
-        function toggleMenu() {
+        function toggleMenu(e) {
+            e.stopPropagation();
             if (mainNav.classList.contains('active')) {
                 closeMenu();
             } else {
@@ -100,20 +99,15 @@
             }
         }
 
-        // Toggle on burger click
-        burgerBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            toggleMenu();
-        });
+        burgerBtn.addEventListener('click', toggleMenu);
 
-        // Close on overlay click
         mobileOverlay.addEventListener('click', function (e) {
             e.preventDefault();
+            e.stopPropagation();
             closeMenu();
         });
 
-        // Close on nav link click
-        DOM.navLinks.forEach(link => {
+        DOM.navLinks.forEach(function (link) {
             link.addEventListener('click', function () {
                 if (mainNav.classList.contains('active')) {
                     closeMenu();
@@ -121,19 +115,18 @@
             });
         });
 
-        // Close on Escape key
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && mainNav.classList.contains('active')) {
                 closeMenu();
             }
         });
 
-        // ===== FIX: מניעת גלילה בתוך overlay =====
+        // מניעת גלילה על ה-overlay
         mobileOverlay.addEventListener('touchmove', function (e) {
             e.preventDefault();
         }, { passive: false });
 
-        // ===== FIX: סגירת תפריט בשינוי גודל מסך =====
+        // סגירת תפריט בשינוי גודל מסך
         window.addEventListener('resize', debounce(function () {
             if (window.innerWidth > 1024 && mainNav.classList.contains('active')) {
                 closeMenu();
@@ -146,19 +139,18 @@
     // SMOOTH SCROLL NAVIGATION
     // ========================================
     function initSmoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
             anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
+                var targetId = this.getAttribute('href');
                 if (targetId === '#') return;
 
-                const target = document.querySelector(targetId);
+                var target = document.querySelector(targetId);
                 if (!target) return;
 
                 e.preventDefault();
 
-                // ===== FIX: חישוב מיקום מדויק עם offset =====
-                const headerHeight = DOM.header.offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+                var headerHeight = DOM.header.offsetHeight;
+                var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
 
                 window.scrollTo({
                     top: targetPosition,
@@ -170,25 +162,25 @@
 
 
     // ========================================
-    // ACTIVE NAV LINK HIGHLIGHTING
+    // ACTIVE NAV LINK
     // ========================================
     function initActiveNav() {
-        const sections = document.querySelectorAll('section[id]');
+        var sections = document.querySelectorAll('section[id]');
 
         function updateActiveLink() {
             if (document.body.classList.contains('menu-open')) return;
 
-            const scrollPos = window.scrollY + window.innerHeight / 3;
+            var scrollPos = window.scrollY + window.innerHeight / 3;
 
-            sections.forEach(section => {
-                const top = section.offsetTop;
-                const height = section.offsetHeight;
-                const id = section.getAttribute('id');
+            sections.forEach(function (section) {
+                var top = section.offsetTop;
+                var height = section.offsetHeight;
+                var id = section.getAttribute('id');
 
                 if (scrollPos >= top && scrollPos < top + height) {
-                    DOM.navLinks.forEach(link => {
+                    DOM.navLinks.forEach(function (link) {
                         link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
+                        if (link.getAttribute('href') === '#' + id) {
                             link.classList.add('active');
                         }
                     });
@@ -205,22 +197,20 @@
     // FAQ ACCORDION
     // ========================================
     function initFAQ() {
-        DOM.faqItems.forEach(item => {
-            const question = item.querySelector('.faq__question');
-            const answer = item.querySelector('.faq__answer');
+        DOM.faqItems.forEach(function (item) {
+            var question = item.querySelector('.faq__question');
+            var answer = item.querySelector('.faq__answer');
 
             question.addEventListener('click', function () {
-                const isActive = item.classList.contains('active');
+                var isActive = item.classList.contains('active');
 
-                // Close all FAQ items
-                DOM.faqItems.forEach(otherItem => {
-                    const otherAnswer = otherItem.querySelector('.faq__answer');
+                DOM.faqItems.forEach(function (otherItem) {
+                    var otherAnswer = otherItem.querySelector('.faq__answer');
                     otherItem.classList.remove('active');
                     otherAnswer.style.maxHeight = null;
                     otherItem.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
                 });
 
-                // Open clicked item if it wasn't active
                 if (!isActive) {
                     item.classList.add('active');
                     answer.style.maxHeight = answer.scrollHeight + 'px';
@@ -232,20 +222,22 @@
 
 
     // ========================================
-    // SCROLL ANIMATIONS (Intersection Observer)
+    // SCROLL ANIMATIONS
     // ========================================
     function initScrollAnimations() {
         if (!('IntersectionObserver' in window)) {
-            DOM.animatedElements.forEach(el => el.classList.add('animated'));
+            DOM.animatedElements.forEach(function (el) {
+                el.classList.add('animated');
+            });
             return;
         }
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
+        var observer = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
-                        const delay = entry.target.getAttribute('data-delay') || 0;
-                        setTimeout(() => {
+                        var delay = entry.target.getAttribute('data-delay') || 0;
+                        setTimeout(function () {
                             entry.target.classList.add('animated');
                         }, parseInt(delay));
                         observer.unobserve(entry.target);
@@ -258,7 +250,9 @@
             }
         );
 
-        DOM.animatedElements.forEach(el => observer.observe(el));
+        DOM.animatedElements.forEach(function (el) {
+            observer.observe(el);
+        });
     }
 
 
@@ -267,15 +261,15 @@
     // ========================================
     function initCounters() {
         if (!('IntersectionObserver' in window)) {
-            DOM.counters.forEach(counter => {
+            DOM.counters.forEach(function (counter) {
                 counter.textContent = counter.getAttribute('data-count');
             });
             return;
         }
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
+        var observer = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         animateCounter(entry.target);
                         observer.unobserve(entry.target);
@@ -285,14 +279,16 @@
             { threshold: 0.5 }
         );
 
-        DOM.counters.forEach(counter => observer.observe(counter));
+        DOM.counters.forEach(function (counter) {
+            observer.observe(counter);
+        });
     }
 
     function animateCounter(element) {
-        const target = parseInt(element.getAttribute('data-count'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
+        var target = parseInt(element.getAttribute('data-count'));
+        var duration = 2000;
+        var step = target / (duration / 16);
+        var current = 0;
 
         function update() {
             current += step;
@@ -309,15 +305,14 @@
 
 
     // ========================================
-    // FLOATING BUTTONS VISIBILITY
+    // FLOATING BUTTONS
     // ========================================
     function initFloatingButtons() {
-        const showThreshold = 400;
+        var showThreshold = 400;
 
         function handleScroll() {
             if (document.body.classList.contains('menu-open')) return;
-            const visible = window.scrollY > showThreshold;
-            DOM.floatingButtons.classList.toggle('visible', visible);
+            DOM.floatingButtons.classList.toggle('visible', window.scrollY > showThreshold);
         }
 
         window.addEventListener('scroll', debounce(handleScroll, 50));
@@ -326,7 +321,7 @@
 
 
     // ========================================
-    // CONTACT FORM VALIDATION
+    // CONTACT FORM
     // ========================================
     function initContactForm() {
         if (!DOM.contactForm) return;
@@ -334,12 +329,12 @@
         DOM.contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const name = document.getElementById('name');
-            const phone = document.getElementById('phone');
-            const email = document.getElementById('email');
-            let isValid = true;
+            var name = document.getElementById('name');
+            var phone = document.getElementById('phone');
+            var email = document.getElementById('email');
+            var isValid = true;
 
-            [name, phone, email].forEach(input => {
+            [name, phone, email].forEach(function (input) {
                 input.classList.remove('error', 'success');
             });
 
@@ -350,7 +345,7 @@
                 name.classList.add('success');
             }
 
-            const phoneRegex = /^[\d\-+() ]{9,15}$/;
+            var phoneRegex = /^[\d\-+() ]{9,15}$/;
             if (!phone.value.trim() || !phoneRegex.test(phone.value.trim())) {
                 phone.classList.add('error');
                 isValid = false;
@@ -359,7 +354,7 @@
             }
 
             if (email.value.trim()) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(email.value.trim())) {
                     email.classList.add('error');
                     isValid = false;
@@ -369,43 +364,40 @@
             }
 
             if (isValid) {
-                const service = document.getElementById('service');
-                const message = document.getElementById('message');
+                var service = document.getElementById('service');
+                var message = document.getElementById('message');
 
-                const whatsappMessage = encodeURIComponent(
-                    `שלום, אשמח לקבל הצעת מחיר.\n` +
-                    `שם: ${name.value.trim()}\n` +
-                    `טלפון: ${phone.value.trim()}\n` +
-                    (email.value.trim() ? `אימייל: ${email.value.trim()}\n` : '') +
-                    (service.value ? `שירות: ${service.options[service.selectedIndex].text}\n` : '') +
-                    (message.value.trim() ? `פרטים: ${message.value.trim()}` : '')
+                var whatsappMessage = encodeURIComponent(
+                    'שלום, אשמח לקבל הצעת מחיר.\n' +
+                    'שם: ' + name.value.trim() + '\n' +
+                    'טלפון: ' + phone.value.trim() + '\n' +
+                    (email.value.trim() ? 'אימייל: ' + email.value.trim() + '\n' : '') +
+                    (service.value ? 'שירות: ' + service.options[service.selectedIndex].text + '\n' : '') +
+                    (message.value.trim() ? 'פרטים: ' + message.value.trim() : '')
                 );
 
-                window.open(`https://wa.me/972528945500?text=${whatsappMessage}`, '_blank');
+                window.open('https://wa.me/972528945500?text=' + whatsappMessage, '_blank');
 
-                const submitBtn = DOM.contactForm.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = `
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    ההודעה נשלחה בהצלחה
-                `;
+                var submitBtn = DOM.contactForm.querySelector('button[type="submit"]');
+                var originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> ההודעה נשלחה בהצלחה';
                 submitBtn.style.background = 'var(--color-success)';
                 submitBtn.style.borderColor = 'var(--color-success)';
 
-                setTimeout(() => {
+                setTimeout(function () {
                     submitBtn.innerHTML = originalText;
                     submitBtn.style.background = '';
                     submitBtn.style.borderColor = '';
                     DOM.contactForm.reset();
-                    [name, phone, email].forEach(input => {
+                    [name, phone, email].forEach(function (input) {
                         input.classList.remove('success');
                     });
                 }, 3000);
             }
         });
 
-        const inputs = DOM.contactForm.querySelectorAll('.contact__input');
-        inputs.forEach(input => {
+        var inputs = DOM.contactForm.querySelectorAll('.contact__input');
+        inputs.forEach(function (input) {
             input.addEventListener('blur', function () {
                 if (this.value.trim() && this.required) {
                     this.classList.remove('error');
@@ -424,18 +416,11 @@
     // IMAGE ERROR HANDLING
     // ========================================
     function initImageErrorHandling() {
-        const allImages = document.querySelectorAll('img');
-
-        allImages.forEach(img => {
+        document.querySelectorAll('img').forEach(function (img) {
             img.addEventListener('error', function () {
                 if (this.dataset.errorHandled) return;
                 this.dataset.errorHandled = 'true';
                 this.style.display = 'none';
-
-                const parent = this.parentElement;
-                if (parent) {
-                    parent.classList.add('image-fallback');
-                }
             });
         });
     }
@@ -445,61 +430,46 @@
     // GALLERY LIGHTBOX
     // ========================================
     function initGalleryLightbox() {
-        const galleryItems = document.querySelectorAll('.gallery__item');
-
-        galleryItems.forEach(item => {
+        document.querySelectorAll('.gallery__item').forEach(function (item) {
             item.addEventListener('click', function () {
-                const img = this.querySelector('.gallery__image');
-                if (!img || !img.src) return;
+                var img = this.querySelector('.gallery__image');
+                if (!img || !img.src || img.style.display === 'none') return;
 
-                // ===== FIX: מניעת פתיחת lightbox במובייל אם אין תמונה =====
-                if (img.style.display === 'none') return;
+                var lightbox = document.createElement('div');
+                lightbox.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;transition:opacity 0.3s ease;';
 
-                const lightbox = document.createElement('div');
-                lightbox.style.cssText = `
-                    position: fixed;
-                    inset: 0;
-                    z-index: 9999;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 1rem;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                `;
-
-                lightbox.innerHTML = `
-                    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);" class="lb-backdrop"></div>
-                    <div style="position:relative;max-width:90vw;max-height:90vh;z-index:1;">
-                        <img src="${img.src}" alt="${img.alt}" style="max-width:100%;max-height:85vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-                        <button style="position:absolute;top:-40px;left:0;background:rgba(255,255,255,0.15);border:none;color:white;font-size:1.5rem;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;-webkit-tap-highlight-color:transparent;" class="lb-close">&times;</button>
-                    </div>
-                `;
+                lightbox.innerHTML =
+                    '<div style="position:absolute;inset:0;background:rgba(0,0,0,0.92);" class="lb-bg"></div>' +
+                    '<div style="position:relative;max-width:90vw;max-height:90vh;z-index:1;">' +
+                    '<img src="' + img.src + '" alt="' + img.alt + '" style="max-width:100%;max-height:85vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);">' +
+                    '<button style="position:absolute;top:-40px;left:0;background:rgba(255,255,255,0.15);border:none;color:white;font-size:1.5rem;cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;-webkit-tap-highlight-color:transparent;" class="lb-x">&times;</button>' +
+                    '</div>';
 
                 document.body.appendChild(lightbox);
                 document.body.style.overflow = 'hidden';
 
-                // Trigger animation
-                requestAnimationFrame(() => {
+                requestAnimationFrame(function () {
                     lightbox.style.opacity = '1';
                 });
 
-                function closeLightbox() {
+                function closeLB() {
                     lightbox.style.opacity = '0';
-                    setTimeout(() => {
-                        lightbox.remove();
+                    setTimeout(function () {
+                        if (lightbox.parentNode) lightbox.parentNode.removeChild(lightbox);
                         document.body.style.overflow = '';
                     }, 300);
                 }
 
-                lightbox.querySelector('.lb-close').addEventListener('click', closeLightbox);
-                lightbox.querySelector('.lb-backdrop').addEventListener('click', closeLightbox);
-                document.addEventListener('keydown', function handler(e) {
+                lightbox.querySelector('.lb-x').addEventListener('click', closeLB);
+                lightbox.querySelector('.lb-bg').addEventListener('click', closeLB);
+
+                var escHandler = function (e) {
                     if (e.key === 'Escape') {
-                        closeLightbox();
-                        document.removeEventListener('keydown', handler);
+                        closeLB();
+                        document.removeEventListener('keydown', escHandler);
                     }
-                });
+                };
+                document.addEventListener('keydown', escHandler);
             });
         });
     }
@@ -516,7 +486,7 @@
 
 
     // ========================================
-    // INITIALIZE ALL MODULES
+    // INIT
     // ========================================
     function init() {
         initHeader();
