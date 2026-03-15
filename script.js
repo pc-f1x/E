@@ -1,18 +1,7 @@
 /**
  * ============================================================
  * ELECTRIC TOOLS - Professional Website JavaScript
- * ============================================================
- * Features:
- * - Sticky Header with scroll detection
- * - Mobile hamburger menu
- * - Smooth scroll navigation
- * - Active link highlighting
- * - FAQ accordion
- * - Scroll-based animations (Intersection Observer)
- * - Counter animation
- * - Floating buttons visibility
- * - Contact form validation
- * - Dynamic year in footer
+ * Updated with image support
  * ============================================================
  */
 
@@ -40,13 +29,6 @@
     // ========================================
     // UTILITY FUNCTIONS
     // ========================================
-
-    /**
-     * Debounce function to limit execution rate
-     * @param {Function} func - Function to debounce
-     * @param {number} wait - Wait time in ms
-     * @returns {Function} Debounced function
-     */
     function debounce(func, wait = 100) {
         let timeout;
         return function (...args) {
@@ -68,7 +50,7 @@
         }
 
         window.addEventListener('scroll', debounce(handleScroll, 10));
-        handleScroll(); // Initial check
+        handleScroll();
     }
 
 
@@ -97,18 +79,13 @@
             burgerBtn.setAttribute('aria-expanded', 'false');
         }
 
-        // Toggle on burger click
         burgerBtn.addEventListener('click', toggleMenu);
-
-        // Close on overlay click
         mobileOverlay.addEventListener('click', closeMenu);
 
-        // Close on nav link click
         DOM.navLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
 
-        // Close on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && mainNav.classList.contains('active')) {
                 closeMenu();
@@ -201,7 +178,6 @@
     // ========================================
     function initScrollAnimations() {
         if (!('IntersectionObserver' in window)) {
-            // Fallback: show all elements
             DOM.animatedElements.forEach(el => el.classList.add('animated'));
             return;
         }
@@ -254,14 +230,10 @@
         DOM.counters.forEach(counter => observer.observe(counter));
     }
 
-    /**
-     * Animate a counter from 0 to target value
-     * @param {HTMLElement} element - Counter element
-     */
     function animateCounter(element) {
         const target = parseInt(element.getAttribute('data-count'));
-        const duration = 2000; // 2 seconds
-        const step = target / (duration / 16); // ~60fps
+        const duration = 2000;
+        const step = target / (duration / 16);
         let current = 0;
 
         function update() {
@@ -303,13 +275,11 @@
         DOM.contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Get form values
             const name = document.getElementById('name');
             const phone = document.getElementById('phone');
             const email = document.getElementById('email');
             let isValid = true;
 
-            // Reset states
             [name, phone, email].forEach(input => {
                 input.classList.remove('error', 'success');
             });
@@ -343,7 +313,6 @@
             }
 
             if (isValid) {
-                // Prepare WhatsApp message
                 const service = document.getElementById('service');
                 const message = document.getElementById('message');
 
@@ -356,7 +325,6 @@
                     (message.value.trim() ? `פרטים: ${message.value.trim()}` : '')
                 );
 
-                // Open WhatsApp with the message
                 window.open(`https://wa.me/972528945500?text=${whatsappMessage}`, '_blank');
 
                 // Show success feedback
@@ -381,7 +349,7 @@
             }
         });
 
-        // Real-time validation feedback
+        // Real-time validation
         const inputs = DOM.contactForm.querySelectorAll('.contact__input');
         inputs.forEach(input => {
             input.addEventListener('blur', function () {
@@ -393,6 +361,139 @@
 
             input.addEventListener('input', function () {
                 this.classList.remove('error');
+            });
+        });
+    }
+
+
+    // ========================================
+    // IMAGE ERROR HANDLING
+    // ========================================
+    /**
+     * Handles broken images gracefully
+     * Shows placeholder when image fails to load
+     */
+    function initImageErrorHandling() {
+        const allImages = document.querySelectorAll('img');
+
+        allImages.forEach(img => {
+            img.addEventListener('error', function () {
+                // Don't process if already handled
+                if (this.dataset.errorHandled) return;
+                this.dataset.errorHandled = 'true';
+
+                // Hide the broken image
+                this.style.display = 'none';
+
+                // Add a placeholder class to parent
+                const parent = this.parentElement;
+                if (parent) {
+                    parent.classList.add('image-fallback');
+                }
+            });
+        });
+    }
+
+
+    // ========================================
+    // GALLERY LIGHTBOX (Simple)
+    // ========================================
+    function initGalleryLightbox() {
+        const galleryItems = document.querySelectorAll('.gallery__item');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function () {
+                const img = this.querySelector('.gallery__image');
+                if (!img || !img.src) return;
+
+                // Create lightbox
+                const lightbox = document.createElement('div');
+                lightbox.className = 'lightbox';
+                lightbox.innerHTML = `
+                    <div class="lightbox__backdrop"></div>
+                    <div class="lightbox__content">
+                        <img src="${img.src}" alt="${img.alt}" class="lightbox__image">
+                        <button class="lightbox__close" aria-label="סגור">&times;</button>
+                    </div>
+                `;
+
+                // Add styles dynamically
+                lightbox.style.cssText = `
+                    position: fixed;
+                    inset: 0;
+                    z-index: 9999;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 2rem;
+                    animation: lightbox-in 0.3s ease;
+                `;
+
+                const backdrop = lightbox.querySelector('.lightbox__backdrop');
+                backdrop.style.cssText = `
+                    position: absolute;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.9);
+                    backdrop-filter: blur(8px);
+                `;
+
+                const content = lightbox.querySelector('.lightbox__content');
+                content.style.cssText = `
+                    position: relative;
+                    max-width: 90vw;
+                    max-height: 90vh;
+                    z-index: 1;
+                `;
+
+                const lightboxImg = lightbox.querySelector('.lightbox__image');
+                lightboxImg.style.cssText = `
+                    max-width: 100%;
+                    max-height: 85vh;
+                    object-fit: contain;
+                    border-radius: 12px;
+                    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+                `;
+
+                const closeBtn = lightbox.querySelector('.lightbox__close');
+                closeBtn.style.cssText = `
+                    position: absolute;
+                    top: -40px;
+                    left: 0;
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    transition: background 0.2s;
+                `;
+
+                document.body.appendChild(lightbox);
+                document.body.style.overflow = 'hidden';
+
+                // Close handlers
+                function closeLightbox() {
+                    lightbox.style.opacity = '0';
+                    lightbox.style.transition = 'opacity 0.3s ease';
+                    setTimeout(() => {
+                        lightbox.remove();
+                        document.body.style.overflow = '';
+                    }, 300);
+                }
+
+                closeBtn.addEventListener('click', closeLightbox);
+                backdrop.addEventListener('click', closeLightbox);
+                document.addEventListener('keydown', function handler(e) {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                        document.removeEventListener('keydown', handler);
+                    }
+                });
             });
         });
     }
@@ -421,10 +522,11 @@
         initCounters();
         initFloatingButtons();
         initContactForm();
+        initImageErrorHandling();
+        initGalleryLightbox();
         initYear();
     }
 
-    // Run on DOM ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
