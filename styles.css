@@ -1,6 +1,6 @@
 /* ============================================================
    ELECTRIC TOOLS - Professional Website Stylesheet
-   Industrial Modern Design - MOBILE BUGS FIXED
+   Industrial Modern Design - ALL MOBILE BUGS FIXED
    ============================================================ */
 
 /* ========================================
@@ -108,7 +108,6 @@
     box-sizing: border-box;
 }
 
-/* ===== FIX 1: מניעת גלילה אופקית ===== */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
@@ -123,18 +122,15 @@ body {
     line-height: 1.7;
     color: var(--color-text);
     background-color: var(--color-bg);
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* ===== FIX 2: מניעת גלילה אופקית מוחלטת ===== */
+    overflow-x: hidden;
     width: 100%;
-    max-width: 100vw;
-    position: relative;
+    min-height: 100vh;
 }
 
 body.menu-open {
     overflow: hidden;
-    /* ===== FIX 3: נעילת גוף העמוד כשתפריט פתוח ===== */
     position: fixed;
     width: 100%;
     height: 100%;
@@ -167,8 +163,6 @@ button {
 
 input, select, textarea {
     font-family: inherit;
-    font-size: inherit;
-    /* ===== FIX 4: מניעת זום אוטומטי באייפון ===== */
     font-size: 16px;
 }
 
@@ -186,8 +180,6 @@ input, select, textarea {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-padding);
-    /* ===== FIX 5: מניעת חריגה של קונטיינר ===== */
-    overflow-x: hidden;
 }
 
 
@@ -223,7 +215,6 @@ input, select, textarea {
     color: var(--color-primary);
     line-height: 1.2;
     margin-bottom: var(--space-4);
-    /* ===== FIX 6: מניעת שבירת מילים ארוכות ===== */
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -253,8 +244,8 @@ input, select, textarea {
     cursor: pointer;
     text-align: center;
     line-height: 1.5;
-    /* ===== FIX 7: מניעת כפתורים חורגים ===== */
     max-width: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn--lg {
@@ -354,8 +345,6 @@ input, select, textarea {
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    /* ===== FIX 8: ביטול overflow hidden בהדר ===== */
-    overflow: visible;
 }
 
 /* Logo */
@@ -364,7 +353,6 @@ input, select, textarea {
     align-items: center;
     gap: var(--space-3);
     z-index: calc(var(--z-mobile-menu) + 1);
-    /* ===== FIX 9: מניעת כיווץ הלוגו ===== */
     flex-shrink: 0;
 }
 
@@ -445,7 +433,6 @@ input, select, textarea {
     z-index: calc(var(--z-mobile-menu) + 1);
     border-radius: var(--radius-md);
     transition: background var(--transition-base);
-    /* ===== FIX 10: כפתור המבורגר תמיד מעל ===== */
     position: relative;
     flex-shrink: 0;
     -webkit-tap-highlight-color: transparent;
@@ -478,18 +465,21 @@ input, select, textarea {
     transform: rotate(-45deg) translate(5.5px, -5.5px);
 }
 
-/* ===== FIX 11: Mobile Overlay - תיקון מלא ===== */
+/* ==============================================
+   FIX 1: Mobile Overlay - ללא טשטוש
+   הוסר backdrop-filter לחלוטין
+   רק רקע כהה חצי שקוף
+   ============================================== */
 .mobile-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(10, 22, 40, 0.6);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(10, 22, 40, 0.65);
     z-index: var(--z-overlay);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     -webkit-tap-highlight-color: transparent;
+    /* ===== הוסר backdrop-filter לחלוטין ===== */
 }
 
 .mobile-overlay.active {
@@ -507,7 +497,6 @@ input, select, textarea {
     display: flex;
     align-items: center;
     padding: calc(var(--header-height) + var(--space-12)) 0 var(--space-12);
-    /* ===== FIX 12: מניעת חריגה ב-Hero ===== */
     overflow: hidden;
 }
 
@@ -537,7 +526,6 @@ input, select, textarea {
     position: absolute;
     inset: 0;
     z-index: 2;
-    /* ===== FIX 13: מניעת חריגה של הפטרן ===== */
     overflow: hidden;
     background-image:
         radial-gradient(circle at 20% 50%, rgba(232, 116, 12, 0.08) 0%, transparent 50%),
@@ -554,7 +542,6 @@ input, select, textarea {
     border-radius: 50%;
     border: 1px solid rgba(232, 116, 12, 0.1);
     animation: hero-pulse 8s ease-in-out infinite;
-    /* ===== FIX 14: הגבלת הפטרן לגבולות הסקשן ===== */
     pointer-events: none;
 }
 
@@ -585,12 +572,7 @@ input, select, textarea {
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-full);
     margin-bottom: var(--space-6);
-    backdrop-filter: blur(8px);
-    /* ===== FIX 15: מניעת שבירת הבאדג' ===== */
-    white-space: nowrap;
     max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .hero__title {
@@ -599,7 +581,6 @@ input, select, textarea {
     color: var(--color-white);
     line-height: 1.15;
     margin-bottom: var(--space-6);
-    /* ===== FIX 16: מניעת שבירת כותרת ===== */
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -742,12 +723,13 @@ input, select, textarea {
 
 /* ========================================
    SERVICES SECTION
-   ======================================== */
+   ==============================================
+   FIX 2: הוסר overflow:hidden מכל הסקשנים
+   במקום זה, overflow:hidden רק על html ו-body
+   ============================================== */
 .services {
     padding: var(--space-24) 0;
     background: var(--color-bg);
-    /* ===== FIX 17: מניעת חריגה בסקשנים ===== */
-    overflow: hidden;
 }
 
 .services__grid {
@@ -849,8 +831,6 @@ input, select, textarea {
 .why-us {
     padding: var(--space-24) 0;
     background: var(--color-bg-alt);
-    /* ===== FIX 18: מניעת חריגה של באדג'ים צפים ===== */
-    overflow: hidden;
 }
 
 .why-us__wrapper {
@@ -988,7 +968,6 @@ input, select, textarea {
 .gallery {
     padding: var(--space-24) 0;
     background: var(--color-bg);
-    overflow: hidden;
 }
 
 .gallery__grid {
@@ -1064,7 +1043,6 @@ input, select, textarea {
 .service-area {
     padding: var(--space-24) 0;
     background: var(--color-bg-alt);
-    overflow: hidden;
 }
 
 .service-area__wrapper {
@@ -1140,7 +1118,6 @@ input, select, textarea {
 .faq {
     padding: var(--space-24) 0;
     background: var(--color-bg);
-    overflow: hidden;
 }
 
 .faq__list {
@@ -1266,7 +1243,6 @@ input, select, textarea {
 .contact {
     padding: var(--space-24) 0;
     background: var(--color-bg-alt);
-    overflow: hidden;
 }
 
 .contact__wrapper {
@@ -1408,7 +1384,6 @@ input, select, textarea {
     background: var(--color-primary);
     color: rgba(255, 255, 255, 0.7);
     padding: var(--space-16) 0 0;
-    overflow: hidden;
 }
 
 .footer__top {
@@ -1475,7 +1450,6 @@ input, select, textarea {
     gap: var(--space-2);
     font-size: var(--text-sm);
     margin-bottom: var(--space-3);
-    /* ===== FIX 19: מניעת שבירת שורות בפוטר ===== */
     word-break: break-all;
 }
 
@@ -1665,7 +1639,6 @@ input, select, textarea {
         margin: 0 auto;
     }
 
-    /* ===== FIX 20: באדג'ים צפים לא יוצאים מהמסך ===== */
     .why-us__floating-badge--1 {
         left: var(--space-4);
     }
@@ -1696,7 +1669,7 @@ input, select, textarea {
         gap: var(--space-8);
     }
 
-    /* ===== FIX 21: תפריט מובייל - תיקון מלא ===== */
+    /* ===== תפריט מובייל ===== */
     .header__burger {
         display: flex;
     }
@@ -1708,7 +1681,7 @@ input, select, textarea {
         width: 80%;
         max-width: 360px;
         height: 100vh;
-        height: 100dvh; /* Dynamic viewport height - תיקון לאייפון */
+        height: 100dvh;
         background: var(--color-white);
         z-index: var(--z-mobile-menu);
         padding: calc(var(--header-height) + var(--space-8)) var(--space-8) var(--space-8);
@@ -1716,7 +1689,6 @@ input, select, textarea {
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        /* ===== FIX 22: מניעת שינוי רוחב בזמן אנימציה ===== */
         will-change: right;
     }
 
@@ -1773,7 +1745,6 @@ input, select, textarea {
         font-size: var(--text-2xl);
     }
 
-    /* ===== FIX 23: כפתורים מלאים ברוחב במובייל ===== */
     .hero__buttons {
         flex-direction: column;
         width: 100%;
@@ -1795,6 +1766,11 @@ input, select, textarea {
         font-size: var(--text-2xl);
     }
 
+    /* ===== FIX: מניעת פטרן חורג במובייל ===== */
+    .hero__bg-pattern::before {
+        display: none;
+    }
+
     .services__grid {
         grid-template-columns: 1fr;
     }
@@ -1812,7 +1788,6 @@ input, select, textarea {
         grid-column: span 1;
     }
 
-    /* ===== FIX 24: גלריה - overlay נראה במובייל ===== */
     .gallery__overlay {
         opacity: 1;
         transform: translateY(0);
@@ -1863,7 +1838,6 @@ input, select, textarea {
         gap: var(--space-8);
     }
 
-    /* ===== FIX 25: כפתורים צפים קטנים יותר במובייל ===== */
     .floating-btn {
         width: 50px;
         height: 50px;
@@ -1874,7 +1848,7 @@ input, select, textarea {
         left: var(--space-4);
     }
 
-    /* ===== FIX 26: באדג'ים צפים - סתירת חריגה במובייל ===== */
+    /* ===== FIX: באדג'ים צפים במובייל ===== */
     .why-us__floating-badge--1 {
         left: var(--space-2);
         top: var(--space-4);
@@ -1887,11 +1861,6 @@ input, select, textarea {
         bottom: var(--space-4);
         font-size: var(--text-xs);
         padding: var(--space-2) var(--space-3);
-    }
-
-    /* ===== FIX 27: מניעת חריגת הפטרן ===== */
-    .hero__bg-pattern::before {
-        display: none;
     }
 }
 
@@ -1944,7 +1913,6 @@ input, select, textarea {
         font-size: var(--text-sm);
     }
 
-    /* ===== FIX 28: לוגו קטן יותר במסכים קטנים ===== */
     .header__logo-name {
         font-size: var(--text-base);
     }
@@ -1958,7 +1926,6 @@ input, select, textarea {
         height: 34px;
     }
 
-    /* ===== FIX 29: הסתרת באדג'ים צפים במסכים קטנים מאוד ===== */
     .why-us__floating-badge {
         display: none;
     }
