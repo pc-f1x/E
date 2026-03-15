@@ -1,6 +1,6 @@
 /* ============================================================
    ELECTRIC TOOLS - Professional Website Stylesheet
-   Industrial Modern Design
+   Industrial Modern Design - Updated with Image Support
    ============================================================ */
 
 /* ========================================
@@ -127,7 +127,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Body lock for mobile menu */
 body.menu-open {
     overflow: hidden;
 }
@@ -161,7 +160,6 @@ input, select, textarea {
     font-size: inherit;
 }
 
-/* Focus Styles for Accessibility */
 :focus-visible {
     outline: 3px solid var(--color-accent);
     outline-offset: 2px;
@@ -338,7 +336,7 @@ input, select, textarea {
     height: 100%;
 }
 
-/* Logo */
+/* Logo - Updated for Image */
 .header__logo {
     display: flex;
     align-items: center;
@@ -346,10 +344,15 @@ input, select, textarea {
     z-index: calc(var(--z-mobile-menu) + 1);
 }
 
-.header__logo-icon {
+/* ============================================
+   תמונת לוגו בהדר
+   ============================================ */
+.header__logo-img {
     width: 40px;
     height: 40px;
+    object-fit: contain;
     flex-shrink: 0;
+    border-radius: var(--radius-md);
 }
 
 .header__logo-text {
@@ -437,7 +440,6 @@ input, select, textarea {
     transform-origin: center;
 }
 
-/* Burger Active State */
 .header__burger.active .header__burger-line:nth-child(1) {
     transform: rotate(45deg) translate(5.5px, 5.5px);
 }
@@ -470,7 +472,7 @@ input, select, textarea {
 
 
 /* ========================================
-   HERO SECTION
+   HERO SECTION - Updated with Background Image
    ======================================== */
 .hero {
     position: relative;
@@ -479,23 +481,47 @@ input, select, textarea {
     align-items: center;
     padding: calc(var(--header-height) + var(--space-12)) 0 var(--space-12);
     overflow: hidden;
-    background: linear-gradient(135deg, #F7F8FA 0%, #EDF2F7 50%, #E2E8F0 100%);
 }
 
+/* ============================================
+   שינוי 4: תמונת רקע של ה-Hero
+   ============================================
+   שנה את הנתיב images/hero-bg.jpg לתמונה שלך
+   גודל מומלץ: 1920x1080 פיקסל
+   ============================================ */
 .hero__bg {
     position: absolute;
     inset: 0;
-    overflow: hidden;
     z-index: 0;
+    /* === תמונת רקע - שנה את הנתיב === */
+    background-image: url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* שכבת כיסוי כהה מעל תמונת הרקע לקריאות טקסט */
+.hero__bg-overlay {
+    position: absolute;
+    inset: 0;
+    /* === שנה את האטימות לפי בהירות התמונה שלך === */
+    /* ערך גבוה יותר = כהה יותר (0.5-0.85) */
+    background: linear-gradient(
+        135deg,
+        rgba(10, 22, 40, 0.82) 0%,
+        rgba(10, 22, 40, 0.70) 40%,
+        rgba(10, 22, 40, 0.60) 100%
+    );
+    z-index: 1;
 }
 
 .hero__bg-pattern {
     position: absolute;
     inset: 0;
+    z-index: 2;
     background-image:
-        radial-gradient(circle at 20% 50%, rgba(232, 116, 12, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(10, 22, 40, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 60% 80%, rgba(43, 108, 176, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 20% 50%, rgba(232, 116, 12, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
 }
 
 .hero__bg-pattern::before {
@@ -506,20 +532,8 @@ input, select, textarea {
     width: 800px;
     height: 800px;
     border-radius: 50%;
-    border: 1px solid rgba(232, 116, 12, 0.08);
+    border: 1px solid rgba(232, 116, 12, 0.1);
     animation: hero-pulse 8s ease-in-out infinite;
-}
-
-.hero__bg-pattern::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -20%;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    border: 1px solid rgba(10, 22, 40, 0.06);
-    animation: hero-pulse 10s ease-in-out infinite reverse;
 }
 
 @keyframes hero-pulse {
@@ -529,14 +543,14 @@ input, select, textarea {
 
 .hero__container {
     position: relative;
-    z-index: 1;
+    z-index: 3;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-16);
     align-items: center;
 }
 
-/* Hero Content */
+/* Hero Content - Updated colors for dark background */
 .hero__badge {
     display: inline-flex;
     align-items: center;
@@ -544,18 +558,18 @@ input, select, textarea {
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-accent);
-    background: var(--color-white);
+    background: rgba(232, 116, 12, 0.15);
+    border: 1px solid rgba(232, 116, 12, 0.3);
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-full);
     margin-bottom: var(--space-6);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-accent-light);
+    backdrop-filter: blur(8px);
 }
 
 .hero__title {
     font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
     font-weight: 900;
-    color: var(--color-primary);
+    color: var(--color-white);
     line-height: 1.15;
     margin-bottom: var(--space-6);
 }
@@ -567,7 +581,7 @@ input, select, textarea {
 
 .hero__text {
     font-size: var(--text-lg);
-    color: var(--color-text-light);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
     margin-bottom: var(--space-8);
     max-width: 540px;
@@ -586,7 +600,7 @@ input, select, textarea {
     gap: var(--space-3);
     font-size: var(--text-base);
     font-weight: 500;
-    color: var(--color-secondary);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .hero__buttons {
@@ -595,7 +609,9 @@ input, select, textarea {
     gap: var(--space-4);
 }
 
-/* Hero Visual */
+/* ============================================
+   שינוי 1: תמונת לוגו ב-Hero Visual
+   ============================================ */
 .hero__visual {
     display: flex;
     justify-content: center;
@@ -603,25 +619,41 @@ input, select, textarea {
 }
 
 .hero__visual-card {
-    background: var(--color-white);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-2xl);
     padding: var(--space-10);
-    box-shadow: var(--shadow-xl);
     text-align: center;
     width: 100%;
     max-width: 420px;
-    border: 1px solid var(--color-border-light);
 }
 
-.hero__visual-icon {
+.hero__visual-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: var(--space-8);
+    padding: var(--space-4);
 }
 
-.hero__visual-icon svg {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
+/* === תמונת הלוגו ב-Hero === */
+.hero__logo-img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
     animation: float 6s ease-in-out infinite;
+    /* ============================
+       אם הלוגו על רקע שקוף:
+       filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+       
+       אם הלוגו מרובע ללא שקיפות:
+       border-radius: var(--radius-xl);
+       box-shadow: var(--shadow-2xl);
+       ============================ */
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
 }
 
 @keyframes float {
@@ -634,7 +666,7 @@ input, select, textarea {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-4);
     padding-top: var(--space-8);
-    border-top: 1px solid var(--color-border-light);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .hero__stat {
@@ -653,7 +685,7 @@ input, select, textarea {
 .hero__stat-label {
     display: block;
     font-size: var(--text-xs);
-    color: var(--color-text-light);
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 500;
     margin-top: var(--space-1);
 }
@@ -668,15 +700,16 @@ input, select, textarea {
     flex-direction: column;
     align-items: center;
     gap: var(--space-2);
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.5);
     font-size: var(--text-xs);
     font-weight: 500;
+    z-index: 3;
 }
 
 .hero__scroll-line {
     width: 1px;
     height: 40px;
-    background: linear-gradient(to bottom, var(--color-text-muted), transparent);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
     animation: scroll-line 2s ease-in-out infinite;
 }
 
@@ -702,7 +735,6 @@ input, select, textarea {
     gap: var(--space-8);
 }
 
-/* Service Card */
 .service-card {
     background: var(--color-white);
     border: 1px solid var(--color-border-light);
@@ -791,7 +823,7 @@ input, select, textarea {
 
 
 /* ========================================
-   WHY CHOOSE US SECTION
+   WHY CHOOSE US SECTION - Updated with Image
    ======================================== */
 .why-us {
     padding: var(--space-24) 0;
@@ -854,7 +886,9 @@ input, select, textarea {
     line-height: 1.6;
 }
 
-/* Why Us Visual */
+/* ============================================
+   שינוי 2: תמונה בריבוע "למה לבחור בנו"
+   ============================================ */
 .why-us__visual {
     position: relative;
 }
@@ -863,31 +897,34 @@ input, select, textarea {
     position: relative;
 }
 
-.why-us__image-placeholder {
-    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+.why-us__image-wrapper {
     border-radius: var(--radius-2xl);
-    padding: var(--space-16) var(--space-8);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 480px;
-    color: var(--color-white);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    /* === יחס גובה-רוחב של התמונה === */
+    aspect-ratio: 6 / 7;
 }
 
-.why-us__image-placeholder svg {
-    width: 160px;
-    height: 160px;
-    margin-bottom: var(--space-6);
-    opacity: 0.8;
+.why-us__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
 }
 
-.why-us__image-placeholder span {
-    font-family: var(--font-english);
-    font-size: var(--text-2xl);
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    opacity: 0.6;
+.why-us__image-wrapper:hover .why-us__image {
+    transform: scale(1.03);
+}
+
+/* === אם התמונה לא נטענה - תציג placeholder === */
+.why-us__image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+    z-index: -1;
 }
 
 /* Floating Badges */
@@ -904,17 +941,18 @@ input, select, textarea {
     font-weight: 600;
     color: var(--color-primary);
     animation: badge-float 4s ease-in-out infinite;
+    z-index: 2;
 }
 
 .why-us__floating-badge--1 {
     top: var(--space-8);
-    left: -var(--space-8);
+    left: calc(-1 * var(--space-8));
     animation-delay: 0s;
 }
 
 .why-us__floating-badge--2 {
     bottom: var(--space-8);
-    right: -var(--space-4);
+    right: calc(-1 * var(--space-4));
     animation-delay: 2s;
 }
 
@@ -925,7 +963,7 @@ input, select, textarea {
 
 
 /* ========================================
-   GALLERY SECTION
+   GALLERY SECTION - Updated with Real Images
    ======================================== */
 .gallery {
     padding: var(--space-24) 0;
@@ -944,6 +982,7 @@ input, select, textarea {
     border-radius: var(--radius-xl);
     overflow: hidden;
     cursor: pointer;
+    /* === רקע חלופי אם התמונה לא נטענה === */
     background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
 }
 
@@ -951,19 +990,30 @@ input, select, textarea {
     grid-column: span 2;
 }
 
-.gallery__placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.25);
+/* ============================================
+   שינוי 3: תמונות בגלריה
+   ============================================ */
+.gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery__item:hover .gallery__image {
+    transform: scale(1.08);
 }
 
 .gallery__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(10, 22, 40, 0.9) 0%, rgba(10, 22, 40, 0.2) 50%, transparent 100%);
+    background: linear-gradient(
+        to top,
+        rgba(10, 22, 40, 0.9) 0%,
+        rgba(10, 22, 40, 0.3) 40%,
+        transparent 100%
+    );
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -976,11 +1026,6 @@ input, select, textarea {
 .gallery__item:hover .gallery__overlay {
     opacity: 1;
     transform: translateY(0);
-}
-
-.gallery__item:hover {
-    transform: scale(1.02);
-    transition: transform var(--transition-slow);
 }
 
 .gallery__overlay h4 {
@@ -1046,7 +1091,6 @@ input, select, textarea {
     border-color: var(--color-accent);
 }
 
-/* Map Placeholder */
 .service-area__map-placeholder {
     background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
     border-radius: var(--radius-2xl);
@@ -1211,7 +1255,6 @@ input, select, textarea {
     align-items: start;
 }
 
-/* Contact Info */
 .contact__info {
     display: flex;
     flex-direction: column;
@@ -1264,7 +1307,6 @@ input, select, textarea {
     margin-top: var(--space-4);
 }
 
-/* Contact Form */
 .contact__form {
     background: var(--color-white);
     border-radius: var(--radius-2xl);
@@ -1329,7 +1371,6 @@ input, select, textarea {
     min-height: 100px;
 }
 
-/* Form Success/Error States */
 .contact__input.error {
     border-color: var(--color-error);
 }
@@ -1363,9 +1404,12 @@ input, select, textarea {
     margin-bottom: var(--space-4);
 }
 
-.footer__logo-icon {
+/* === תמונת לוגו בפוטר === */
+.footer__logo-img {
     width: 36px;
     height: 36px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
 }
 
 .footer__logo span {
@@ -1454,6 +1498,7 @@ input, select, textarea {
     color: var(--color-white);
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-base);
+    position: relative;
 }
 
 .floating-btn:hover {
@@ -1484,7 +1529,6 @@ input, select, textarea {
     box-shadow: 0 8px 24px rgba(43, 108, 176, 0.4);
 }
 
-/* Pulse animation for WhatsApp */
 .floating-btn--whatsapp::before {
     content: '';
     position: absolute;
@@ -1565,6 +1609,10 @@ input, select, textarea {
         margin: 0 auto;
     }
 
+    .hero__logo-img {
+        max-width: 220px;
+    }
+
     .hero__scroll {
         display: none;
     }
@@ -1588,8 +1636,17 @@ input, select, textarea {
         text-align: center;
     }
 
-    .why-us__image-placeholder {
-        min-height: 360px;
+    .why-us__image-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .why-us__floating-badge--1 {
+        left: var(--space-4);
+    }
+
+    .why-us__floating-badge--2 {
+        right: var(--space-4);
     }
 
     .gallery__grid {
@@ -1698,9 +1755,8 @@ input, select, textarea {
         padding: var(--space-6);
     }
 
-    .hero__visual-icon svg {
-        width: 80px;
-        height: 80px;
+    .hero__logo-img {
+        max-width: 180px;
     }
 
     .hero__stat-number {
@@ -1751,7 +1807,6 @@ input, select, textarea {
         gap: var(--space-8);
     }
 
-    /* Floating Buttons */
     .floating-btn {
         width: 50px;
         height: 50px;
@@ -1784,6 +1839,10 @@ input, select, textarea {
         font-size: var(--text-xl);
     }
 
+    .hero__logo-img {
+        max-width: 150px;
+    }
+
     .btn--lg {
         padding: var(--space-3) var(--space-6);
         font-size: var(--text-base);
@@ -1810,10 +1869,6 @@ input, select, textarea {
     }
 }
 
-
-/* ========================================
-   RESPONSIVE - Extra Large (min-width: 1920px)
-   ======================================== */
 @media (min-width: 1920px) {
     :root {
         --container-max: 1480px;
@@ -1845,6 +1900,12 @@ input, select, textarea {
     .hero {
         min-height: auto;
         padding-top: 2rem;
+    }
+
+    .hero__title,
+    .hero__text,
+    .hero__trust-item {
+        color: #000 !important;
     }
 }
 
