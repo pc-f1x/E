@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <!-- ========== Meta Tags ========== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- ========== SEO Meta Tags ========== -->
     <title>תיקון מנועים חשמליים ומשאבות בבאר שבע | ELECTRIC TOOLS</title>
     <meta name="description" content="מעבדה מקצועית לתיקון מנועים חשמליים, משאבות מים וכלי עבודה בבאר שבע והדרום. שירות אמין ומהיר לעסקים ומפעלים.">
     <meta name="keywords" content="תיקון מנועים חשמליים, תיקון משאבות מים, תיקון כלי עבודה, ציוד תעשייתי, תיקון מנועים בבאר שבע, ליפוף מנועים, משאבות טבולות, ציוד מטבח תעשייתי">
@@ -14,7 +12,6 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.electrictools.co.il/">
 
-    <!-- ========== Open Graph ========== -->
     <meta property="og:title" content="תיקון מנועים חשמליים ומשאבות בבאר שבע | ELECTRIC TOOLS">
     <meta property="og:description" content="מעבדה מקצועית לתיקון מנועים חשמליים, משאבות מים וכלי עבודה בבאר שבע והדרום. שירות אמין ומהיר לעסקים ומפעלים.">
     <meta property="og:type" content="website">
@@ -23,15 +20,13 @@
     <meta property="og:locale" content="he_IL">
     <meta property="og:site_name" content="ELECTRIC TOOLS">
 
-    <!-- ========== Fonts ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- ========== Stylesheet ========== -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- ===== מניעת קאש - הוסף ?v=2 ===== -->
+    <link rel="stylesheet" href="styles.css?v=2">
 
-    <!-- ========== Schema.org Structured Data ========== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -66,33 +61,13 @@
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- HEADER                                     -->
-    <!-- ========================================== -->
+    <!-- HEADER -->
     <header class="header" id="header">
         <div class="container header__container">
-
-            <!-- Logo - רק תמונה, בלי טקסט -->
-            <!--
-            ============================================
-            גודל לוגו מומלץ:
-            - אופקי (מלבני): 160x50 פיקסל
-            - מרובע: 50x50 פיקסל
-            - פורמט: PNG עם רקע שקוף
-            ============================================
-            -->
             <a href="#hero" class="header__logo" aria-label="ELECTRIC TOOLS - דף הבית">
-                <img
-                    src="images/logo.png"
-                    alt="ELECTRIC TOOLS - תיקון ציוד חשמלי ותעשייתי בבאר שבע"
-                    class="header__logo-img"
-                    width="160"
-                    height="50"
-                    loading="eager"
-                >
+                <img src="images/logo.png" alt="ELECTRIC TOOLS - תיקון ציוד חשמלי ותעשייתי בבאר שבע" class="header__logo-img" width="160" height="50" loading="eager">
             </a>
 
-            <!-- Desktop Navigation -->
             <nav class="header__nav" id="mainNav" aria-label="תפריט ראשי">
                 <ul class="header__nav-list">
                     <li><a href="#hero" class="header__nav-link active">דף הבית</a></li>
@@ -104,7 +79,6 @@
                 </ul>
             </nav>
 
-            <!-- Mobile Menu Toggle -->
             <button class="header__burger" id="burgerBtn" aria-label="פתח תפריט" aria-expanded="false">
                 <span class="header__burger-line"></span>
                 <span class="header__burger-line"></span>
@@ -113,18 +87,9 @@
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
-    <!-- ========================================== -->
-    <!-- HERO SECTION                               -->
-    <!-- ========================================== -->
-    <!--
-    ============================================
-    תמונת רקע: images/hero-bg.jpg
-    גודל מומלץ: 1920x1080 פיקסל, JPG/WebP
-    ============================================
-    -->
+    <!-- HERO -->
     <section class="hero" id="hero">
         <div class="hero__bg">
             <div class="hero__bg-overlay"></div>
@@ -143,27 +108,23 @@
                     <span class="hero__title-highlight">בבאר שבע והדרום</span>
                 </h1>
 
-                <p class="hero__text">
-                    מעבדה מקצועית לתיקון ציוד תעשייתי, שיפוץ מנועים חשמליים ותיקון משאבות מים עם ניסיון רב ושירות אמין ומהיר.
-                </p>
+                <p class="hero__text">מעבדה מקצועית לתיקון ציוד תעשייתי, שיפוץ מנועים חשמליים ותיקון משאבות מים עם ניסיון רב ושירות אמין ומהיר.</p>
 
-                <!-- Trust Points -->
                 <ul class="hero__trust">
                     <li class="hero__trust-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E8740C"/><path d="M8 12l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#F28C28"/><path d="M8 12l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         ניסיון רב בתחום
                     </li>
                     <li class="hero__trust-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E8740C"/><path d="M8 12l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#F28C28"/><path d="M8 12l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         שירות מקצועי ומהיר
                     </li>
                     <li class="hero__trust-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E8740C"/><path d="M8 12l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#F28C28"/><path d="M8 12l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         אחריות על תיקונים
                     </li>
                 </ul>
 
-                <!-- CTA Buttons -->
                 <div class="hero__buttons">
                     <a href="tel:0737432323" class="btn btn--primary btn--lg">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -173,30 +134,14 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         שלח וואצפ
                     </a>
-                    <a href="#contact" class="btn btn--outline btn--lg">
-                        קבל הצעת מחיר
-                    </a>
+                    <a href="#contact" class="btn btn--outline btn--lg">קבל הצעת מחיר</a>
                 </div>
             </div>
 
-            <!-- Hero Visual - תמונת לוגו -->
-            <!--
-            ============================================
-            תמונת לוגו ב-Hero: images/hero-logo.png
-            גודל מומלץ: 400x400 פיקסל, PNG שקוף
-            ============================================
-            -->
             <div class="hero__visual" data-animate="fade-left">
                 <div class="hero__visual-card">
                     <div class="hero__visual-image">
-                        <img
-                            src="images/hero-logo.png"
-                            alt="ELECTRIC TOOLS - תיקון מנועים חשמליים ומשאבות בבאר שבע"
-                            class="hero__logo-img"
-                            width="300"
-                            height="300"
-                            loading="eager"
-                        >
+                        <img src="images/hero-logo.png" alt="ELECTRIC TOOLS - תיקון מנועים חשמליים ומשאבות בבאר שבע" class="hero__logo-img" width="300" height="300" loading="eager">
                     </div>
                     <div class="hero__stats">
                         <div class="hero__stat">
@@ -215,17 +160,13 @@
                 </div>
             </div>
         </div>
-
-        <!-- Scroll Indicator -->
         <div class="hero__scroll">
             <span>גלול למטה</span>
             <div class="hero__scroll-line"></div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- SERVICES SECTION                           -->
-    <!-- ========================================== -->
+    <!-- SERVICES -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
@@ -233,227 +174,75 @@
                 <h2 class="section-header__title">שירותי תיקון ושיפוץ ציוד חשמלי ותעשייתי</h2>
                 <p class="section-header__text">אנו מציעים מגוון רחב של שירותי תיקון, שיפוץ ואחזקה לציוד חשמלי ותעשייתי ברמה הגבוהה ביותר</p>
             </div>
-
             <div class="services__grid">
-                <!-- Service 1 -->
                 <article class="service-card" data-animate="fade-up" data-delay="100">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.2"/>
-                            <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
-                            <path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.86 9.86l4.24 4.24M33.9 33.9l4.24 4.24M9.86 38.14l4.24-4.24M33.9 14.1l4.24-4.24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
+                    <div class="service-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.2"/><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.86 9.86l4.24 4.24M33.9 33.9l4.24 4.24M9.86 38.14l4.24-4.24M33.9 14.1l4.24-4.24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
                     <h3 class="service-card__title">תיקון מנועים חשמליים</h3>
                     <p class="service-card__text">שירות מקצועי לליפוף מנועים חשמליים ושיפוץ מנועים תעשייתיים מכל הסוגים והגדלים. אבחון מדויק ותיקון יסודי.</p>
-                    <a href="#contact" class="service-card__link">
-                        קבל הצעת מחיר
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                    </a>
+                    <a href="#contact" class="service-card__link">קבל הצעת מחיר <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
                 </article>
-
-                <!-- Service 2 -->
                 <article class="service-card" data-animate="fade-up" data-delay="200">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <path d="M24 4v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M18 14h12v4c0 6-3 10-6 14-3-4-6-8-6-14v-4z" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <path d="M20 38h8M22 38v6M26 38v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="24" cy="22" r="3" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
+                    <div class="service-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 4v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 14h12v4c0 6-3 10-6 14-3-4-6-8-6-14v-4z" stroke="currentColor" stroke-width="2" fill="none"/><path d="M20 38h8M22 38v6M26 38v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="22" r="3" stroke="currentColor" stroke-width="2"/></svg></div>
                     <h3 class="service-card__title">תיקון משאבות מים</h3>
                     <p class="service-card__text">משאבות טבולות לביוב, משאבות ניקוז, משאבות למבנים, משאבות למזרקות ובריכות כולל פירוק והרכבה בשטח.</p>
-                    <a href="#contact" class="service-card__link">
-                        קבל הצעת מחיר
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                    </a>
+                    <a href="#contact" class="service-card__link">קבל הצעת מחיר <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
                 </article>
-
-                <!-- Service 3 -->
                 <article class="service-card" data-animate="fade-up" data-delay="300">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <path d="M14 34L8 44h32l-6-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <rect x="16" y="8" width="16" height="26" rx="2" stroke="currentColor" stroke-width="2"/>
-                            <path d="M22 8V4h4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="20" y1="16" x2="28" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="20" y1="21" x2="28" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="20" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
+                    <div class="service-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M14 34L8 44h32l-6-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="8" width="16" height="26" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 8V4h4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="16" x2="28" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="21" x2="28" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
                     <h3 class="service-card__title">תיקון כלי עבודה חשמליים</h3>
                     <p class="service-card__text">שירות תיקון כלי עבודה מקצועיים לבעלי מקצוע ולתעשייה. מקדחות, משחזות, מסורים ועוד.</p>
-                    <a href="#contact" class="service-card__link">
-                        קבל הצעת מחיר
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                    </a>
+                    <a href="#contact" class="service-card__link">קבל הצעת מחיר <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
                 </article>
-
-                <!-- Service 4 -->
                 <article class="service-card" data-animate="fade-up" data-delay="100">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <rect x="6" y="14" width="36" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
-                            <path d="M6 20h36" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="16" cy="30" r="4" stroke="currentColor" stroke-width="2"/>
-                            <path d="M26 28h10M26 33h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M14 14V10a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v4" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
+                    <div class="service-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="6" y="14" width="36" height="24" rx="3" stroke="currentColor" stroke-width="2"/><path d="M6 20h36" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="30" r="4" stroke="currentColor" stroke-width="2"/><path d="M26 28h10M26 33h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 14V10a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v4" stroke="currentColor" stroke-width="2"/></svg></div>
                     <h3 class="service-card__title">ציוד מטבח תעשייתי</h3>
                     <p class="service-card__text">שירות תיקון ותחזוקה לציוד מטבח תעשייתי ומוסדי. תנורים, מערבלים, מכונות קפה תעשייתיות ועוד.</p>
-                    <a href="#contact" class="service-card__link">
-                        קבל הצעת מחיר
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                    </a>
+                    <a href="#contact" class="service-card__link">קבל הצעת מחיר <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
                 </article>
-
-                <!-- Service 5 -->
                 <article class="service-card" data-animate="fade-up" data-delay="200">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <path d="M24 4v4M36.73 11.27l-2.83 2.83M44 24h-4M36.73 36.73l-2.83-2.83M24 40v4M14.1 33.9l-2.83 2.83M8 24H4M14.1 14.1l-2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2"/>
-                            <path d="M24 18v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
+                    <div class="service-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 4v4M36.73 11.27l-2.83 2.83M44 24h-4M36.73 36.73l-2.83-2.83M24 40v4M14.1 33.9l-2.83 2.83M8 24H4M14.1 14.1l-2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2"/><path d="M24 18v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                     <h3 class="service-card__title">אחזקה מונעת</h3>
                     <p class="service-card__text">בדיקות ציוד ותחזוקה שוטפת למניעת תקלות. תוכניות אחזקה מותאמות אישית לעסקים ומפעלים.</p>
-                    <a href="#contact" class="service-card__link">
-                        קבל הצעת מחיר
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                    </a>
+                    <a href="#contact" class="service-card__link">קבל הצעת מחיר <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
                 </article>
-
-                <!-- Service 6 -->
                 <article class="service-card" data-animate="fade-up" data-delay="300">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                            <path d="M6 38h36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M10 38V22l14-12 14 12v16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                            <rect x="18" y="28" width="12" height="10" stroke="currentColor" stroke-width="2"/>
-                            <path d="M24 28v10" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="38" cy="12" r="6" fill="#E8740C" opacity="0.2" stroke="currentColor" stroke-width="2"/>
-                            <path d="M38 9v6M35 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
+                    <div class="service-card__icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 38h36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 38V22l14-12 14 12v16" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="18" y="28" width="12" height="10" stroke="currentColor" stroke-width="2"/><path d="M24 28v10" stroke="currentColor" stroke-width="2"/><circle cx="38" cy="12" r="6" fill="#F28C28" opacity="0.2" stroke="currentColor" stroke-width="2"/><path d="M38 9v6M35 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
                     <h3 class="service-card__title">שירות שטח</h3>
                     <p class="service-card__text">שירות מקצועי באתר הלקוח. הגעה מהירה עם כלים וציוד מתקדם לאבחון ותיקון במקום.</p>
-                    <a href="#contact" class="service-card__link">
-                        קבל הצעת מחיר
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                    </a>
+                    <a href="#contact" class="service-card__link">קבל הצעת מחיר <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- WHY CHOOSE US SECTION                      -->
-    <!-- ========================================== -->
+    <!-- WHY US -->
     <section class="why-us" id="why-us">
         <div class="container">
             <div class="why-us__wrapper">
                 <div class="why-us__content" data-animate="fade-right">
                     <span class="section-header__label">למה אנחנו</span>
                     <h2 class="section-header__title">למה לבחור ב-ELECTRIC TOOLS</h2>
-                    <p class="why-us__text">
-                        אנו מספקים שירות מקצועי ואמין לתיקון ושיפוץ ציוד חשמלי ותעשייתי. הצוות המנוסה שלנו מטפל בכל תקלה ביסודיות ובמהירות.
-                    </p>
-
+                    <p class="why-us__text">אנו מספקים שירות מקצועי ואמין לתיקון ושיפוץ ציוד חשמלי ותעשייתי. הצוות המנוסה שלנו מטפל בכל תקלה ביסודיות ובמהירות.</p>
                     <ul class="why-us__list">
-                        <li class="why-us__item">
-                            <div class="why-us__item-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            </div>
-                            <div class="why-us__item-content">
-                                <h3>ניסיון רב בציוד תעשייתי</h3>
-                                <p>שנים של ניסיון בתיקון ושיפוץ מגוון רחב של ציוד חשמלי ותעשייתי</p>
-                            </div>
-                        </li>
-                        <li class="why-us__item">
-                            <div class="why-us__item-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            </div>
-                            <div class="why-us__item-content">
-                                <h3>שירות אמין ומהיר</h3>
-                                <p>זמני תגובה מהירים ועמידה בלוחות זמנים לשביעות רצון מלאה</p>
-                            </div>
-                        </li>
-                        <li class="why-us__item">
-                            <div class="why-us__item-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                            </div>
-                            <div class="why-us__item-content">
-                                <h3>טיפול מקצועי בכל תקלה</h3>
-                                <p>אבחון מדויק ותיקון יסודי של כל סוגי התקלות בציוד חשמלי</p>
-                            </div>
-                        </li>
-                        <li class="why-us__item">
-                            <div class="why-us__item-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-                            </div>
-                            <div class="why-us__item-content">
-                                <h3>חלקים איכותיים</h3>
-                                <p>שימוש בחלקי חילוף מקוריים ואיכותיים בלבד להבטחת עמידות ואורך חיים</p>
-                            </div>
-                        </li>
-                        <li class="why-us__item">
-                            <div class="why-us__item-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            </div>
-                            <div class="why-us__item-content">
-                                <h3>שירות לעסקים ומפעלים</h3>
-                                <p>פתרונות מותאמים לעסקים, מפעלים ומוסדות עם הסכמי שירות ייעודיים</p>
-                            </div>
-                        </li>
+                        <li class="why-us__item"><div class="why-us__item-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="why-us__item-content"><h3>ניסיון רב בציוד תעשייתי</h3><p>שנים של ניסיון בתיקון ושיפוץ מגוון רחב של ציוד חשמלי ותעשייתי</p></div></li>
+                        <li class="why-us__item"><div class="why-us__item-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="why-us__item-content"><h3>שירות אמין ומהיר</h3><p>זמני תגובה מהירים ועמידה בלוחות זמנים לשביעות רצון מלאה</p></div></li>
+                        <li class="why-us__item"><div class="why-us__item-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="why-us__item-content"><h3>טיפול מקצועי בכל תקלה</h3><p>אבחון מדויק ותיקון יסודי של כל סוגי התקלות בציוד חשמלי</p></div></li>
+                        <li class="why-us__item"><div class="why-us__item-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div><div class="why-us__item-content"><h3>חלקים איכותיים</h3><p>שימוש בחלקי חילוף מקוריים ואיכותיים בלבד להבטחת עמידות ואורך חיים</p></div></li>
+                        <li class="why-us__item"><div class="why-us__item-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="why-us__item-content"><h3>שירות לעסקים ומפעלים</h3><p>פתרונות מותאמים לעסקים, מפעלים ומוסדות עם הסכמי שירות ייעודיים</p></div></li>
                     </ul>
                 </div>
-
-                <!-- תמונת מעבדה -->
-                <!--
-                ============================================
-                תמונה: images/workshop.jpg
-                גודל מומלץ: 600x700 פיקסל, JPG/WebP
-                ============================================
-                -->
                 <div class="why-us__visual" data-animate="fade-left">
                     <div class="why-us__image-container">
-                        <div class="why-us__image-wrapper">
-                            <img
-                                src="images/workshop.jpg"
-                                alt="מעבדת ELECTRIC TOOLS - תיקון ושיפוץ ציוד חשמלי ותעשייתי בבאר שבע"
-                                class="why-us__image"
-                                width="600"
-                                height="700"
-                                loading="lazy"
-                            >
-                        </div>
-                        <div class="why-us__floating-badge why-us__floating-badge--1">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8740C" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <span>אחריות מלאה</span>
-                        </div>
-                        <div class="why-us__floating-badge why-us__floating-badge--2">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8740C" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            <span>שירות מהיר</span>
-                        </div>
+                        <div class="why-us__image-wrapper"><img src="images/workshop.jpg" alt="מעבדת ELECTRIC TOOLS - תיקון ושיפוץ ציוד חשמלי ותעשייתי בבאר שבע" class="why-us__image" width="600" height="700" loading="lazy"></div>
+                        <div class="why-us__floating-badge why-us__floating-badge--1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F28C28" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>אחריות מלאה</span></div>
+                        <div class="why-us__floating-badge why-us__floating-badge--2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F28C28" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>שירות מהיר</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- GALLERY SECTION                            -->
-    <!-- ========================================== -->
-    <!--
-    ============================================
-    תמונות גלריה: images/gallery-1.jpg עד gallery-8.jpg
-    רגיל: 800x600 פיקסל
-    רחב (wide): 1200x600 פיקסל
-    ============================================
-    -->
+    <!-- GALLERY -->
     <section class="gallery" id="gallery">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
@@ -461,121 +250,43 @@
                 <h2 class="section-header__title">עבודות תיקון ושיפוץ שביצענו</h2>
                 <p class="section-header__text">מבחר מעבודות התיקון והשיפוץ שבוצעו במעבדה שלנו</p>
             </div>
-
             <div class="gallery__grid" data-animate="fade-up">
-                <div class="gallery__item gallery__item--wide">
-                    <img src="images/gallery-1.jpg" alt="שיפוץ מנוע חשמלי תעשייתי - ליפוף ושיפוץ מלא" class="gallery__image" width="1200" height="600" loading="lazy">
-                    <div class="gallery__overlay">
-                        <h4>שיפוץ מנוע חשמלי תעשייתי</h4>
-                        <p>ליפוף ושיפוץ מלא של מנוע 50 כ"ס</p>
-                    </div>
-                </div>
-
-                <div class="gallery__item">
-                    <img src="images/gallery-2.jpg" alt="תיקון משאבה טבולה - החלפת אטמים ושיפוץ מלא" class="gallery__image" width="800" height="600" loading="lazy">
-                    <div class="gallery__overlay">
-                        <h4>תיקון משאבה טבולה</h4>
-                        <p>החלפת אטמים ושיפוץ מלא</p>
-                    </div>
-                </div>
-
-                <div class="gallery__item">
-                    <img src="images/gallery-3.jpg" alt="תיקון כלי עבודה - תיקון מקדחת תעשייתית" class="gallery__image" width="800" height="600" loading="lazy">
-                    <div class="gallery__overlay">
-                        <h4>תיקון כלי עבודה</h4>
-                        <p>תיקון מקדחת תעשייתית</p>
-                    </div>
-                </div>
-
-                <div class="gallery__item">
-                    <img src="images/gallery-4.jpg" alt="ליפוף מנוע חשמלי תלת-פאזי" class="gallery__image" width="800" height="600" loading="lazy">
-                    <div class="gallery__overlay">
-                        <h4>ליפוף מנוע חשמלי</h4>
-                        <p>ליפוף מנוע תלת-פאזי</p>
-                    </div>
-                </div>
-
-                <div class="gallery__item gallery__item--wide">
-                    <img src="images/gallery-5.jpg" alt="תחזוקת ציוד מטבח תעשייתי - שירות תחזוקה למפעל מזון" class="gallery__image" width="1200" height="600" loading="lazy">
-                    <div class="gallery__overlay">
-                        <h4>תחזוקת ציוד מטבח תעשייתי</h4>
-                        <p>שירות תחזוקה למפעל מזון</p>
-                    </div>
-                </div>
-
-                <div class="gallery__item">
-                    <img src="images/gallery-6.jpg" alt="שירות שטח - תיקון משאבות באתר לקוח" class="gallery__image" width="800" height="600" loading="lazy">
-                    <div class="gallery__overlay">
-                        <h4>שירות שטח</h4>
-                        <p>תיקון משאבות באתר לקוח</p>
-                    </div>
-                </div>
-
-                <div class="gallery__item">
-                    <img src="images/gallery-7.jpg" alt="אחזקה מונעת - תוכנית אחזקה למפעל" class="gallery__image" width="800" height="600" loading="lazy">
-                    <div class="gallery__overlay">
-                        <h4>אחזקה מונעת</h4>
-                        <p>תוכנית אחזקה למפעל</p>
-                    </div>
-                </div>
-
-                <div class="gallery__item">
-                    <img src="images/gallery-8.jpg" alt="תיקון לוחות חשמל - שיפוץ ושדרוג לוח חשמל תעשייתי" class="gallery__image" width="800" height="600" loading="lazy">
-                    <div class="gallery__overlay">
-                        <h4>תיקון לוחות חשמל</h4>
-                        <p>שיפוץ ושדרוג לוח חשמל תעשייתי</p>
-                    </div>
-                </div>
+                <div class="gallery__item gallery__item--wide"><img src="images/gallery-1.jpg" alt="שיפוץ מנוע חשמלי תעשייתי" class="gallery__image" width="1200" height="600" loading="lazy"><div class="gallery__overlay"><h4>שיפוץ מנוע חשמלי תעשייתי</h4><p>ליפוף ושיפוץ מלא של מנוע 50 כ"ס</p></div></div>
+                <div class="gallery__item"><img src="images/gallery-2.jpg" alt="תיקון משאבה טבולה" class="gallery__image" width="800" height="600" loading="lazy"><div class="gallery__overlay"><h4>תיקון משאבה טבולה</h4><p>החלפת אטמים ושיפוץ מלא</p></div></div>
+                <div class="gallery__item"><img src="images/gallery-3.jpg" alt="תיקון כלי עבודה" class="gallery__image" width="800" height="600" loading="lazy"><div class="gallery__overlay"><h4>תיקון כלי עבודה</h4><p>תיקון מקדחת תעשייתית</p></div></div>
+                <div class="gallery__item"><img src="images/gallery-4.jpg" alt="ליפוף מנוע חשמלי" class="gallery__image" width="800" height="600" loading="lazy"><div class="gallery__overlay"><h4>ליפוף מנוע חשמלי</h4><p>ליפוף מנוע תלת-פאזי</p></div></div>
+                <div class="gallery__item gallery__item--wide"><img src="images/gallery-5.jpg" alt="תחזוקת ציוד מטבח תעשייתי" class="gallery__image" width="1200" height="600" loading="lazy"><div class="gallery__overlay"><h4>תחזוקת ציוד מטבח תעשייתי</h4><p>שירות תחזוקה למפעל מזון</p></div></div>
+                <div class="gallery__item"><img src="images/gallery-6.jpg" alt="שירות שטח" class="gallery__image" width="800" height="600" loading="lazy"><div class="gallery__overlay"><h4>שירות שטח</h4><p>תיקון משאבות באתר לקוח</p></div></div>
+                <div class="gallery__item"><img src="images/gallery-7.jpg" alt="אחזקה מונעת" class="gallery__image" width="800" height="600" loading="lazy"><div class="gallery__overlay"><h4>אחזקה מונעת</h4><p>תוכנית אחזקה למפעל</p></div></div>
+                <div class="gallery__item"><img src="images/gallery-8.jpg" alt="תיקון לוחות חשמל" class="gallery__image" width="800" height="600" loading="lazy"><div class="gallery__overlay"><h4>תיקון לוחות חשמל</h4><p>שיפוץ ושדרוג לוח חשמל תעשייתי</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- SERVICE AREA SECTION                       -->
-    <!-- ========================================== -->
+    <!-- SERVICE AREA -->
     <section class="service-area" id="service-area">
         <div class="container">
             <div class="service-area__wrapper" data-animate="fade-up">
                 <div class="service-area__content">
                     <span class="section-header__label">אזור שירות</span>
                     <h2 class="section-header__title">שירות תיקון ציוד תעשייתי בבאר שבע והדרום</h2>
-                    <p class="service-area__text">
-                        אנו מספקים שירות תיקון מנועים, משאבות וציוד תעשייתי בבאר שבע ובאזור הדרום לעסקים, מפעלים ומוסדות. המעבדה שלנו ממוקמת בבאר שבע ומשרתת את כל אזור הנגב.
-                    </p>
+                    <p class="service-area__text">אנו מספקים שירות תיקון מנועים, משאבות וציוד תעשייתי בבאר שבע ובאזור הדרום לעסקים, מפעלים ומוסדות. המעבדה שלנו ממוקמת בבאר שבע ומשרתת את כל אזור הנגב.</p>
                     <div class="service-area__cities">
-                        <span class="service-area__city">באר שבע</span>
-                        <span class="service-area__city">אופקים</span>
-                        <span class="service-area__city">נתיבות</span>
-                        <span class="service-area__city">ערד</span>
-                        <span class="service-area__city">דימונה</span>
-                        <span class="service-area__city">ירוחם</span>
-                        <span class="service-area__city">מצפה רמון</span>
-                        <span class="service-area__city">אילת</span>
-                        <span class="service-area__city">קריית גת</span>
-                        <span class="service-area__city">אשדוד</span>
-                        <span class="service-area__city">אשקלון</span>
-                        <span class="service-area__city">רהט</span>
+                        <span class="service-area__city">באר שבע</span><span class="service-area__city">אופקים</span><span class="service-area__city">נתיבות</span><span class="service-area__city">ערד</span><span class="service-area__city">דימונה</span><span class="service-area__city">ירוחם</span><span class="service-area__city">מצפה רמון</span><span class="service-area__city">אילת</span><span class="service-area__city">קריית גת</span><span class="service-area__city">אשדוד</span><span class="service-area__city">אשקלון</span><span class="service-area__city">רהט</span>
                     </div>
                 </div>
                 <div class="service-area__map">
                     <div class="service-area__map-placeholder">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
-                        </svg>
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                         <span>הפועלים 19, באר שבע</span>
-                        <a href="https://maps.google.com/?q=הפועלים+19+באר+שבע" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">
-                            נווט אלינו ב-Google Maps
-                        </a>
+                        <a href="https://maps.google.com/?q=הפועלים+19+באר+שבע" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">נווט אלינו ב-Google Maps</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- FAQ SECTION                                -->
-    <!-- ========================================== -->
+    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
@@ -583,74 +294,18 @@
                 <h2 class="section-header__title">שאלות ותשובות</h2>
                 <p class="section-header__text">תשובות לשאלות הנפוצות ביותר שמגיעות אלינו</p>
             </div>
-
             <div class="faq__list" data-animate="fade-up">
-                <div class="faq__item">
-                    <button class="faq__question" aria-expanded="false">
-                        <span>כמה זמן לוקח תיקון מנוע חשמלי?</span>
-                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq__answer">
-                        <p>זמן התיקון תלוי בסוג התקלה ובגודל המנוע. תיקונים פשוטים יכולים להסתיים תוך יום עבודה, בעוד שליפוף מנוע מלא עשוי לקחת 2-5 ימי עבודה. אנו תמיד מעדכנים את הלקוח מראש לגבי הזמן המשוער.</p>
-                    </div>
-                </div>
-
-                <div class="faq__item">
-                    <button class="faq__question" aria-expanded="false">
-                        <span>האם אתם מתקנים משאבות טבולות?</span>
-                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq__answer">
-                        <p>כן, אנו מתמחים בתיקון כל סוגי המשאבות הטבולות כולל משאבות ביוב, משאבות ניקוז ומשאבות למזרקות ובריכות. אנו מבצעים גם פירוק והרכבה בשטח.</p>
-                    </div>
-                </div>
-
-                <div class="faq__item">
-                    <button class="faq__question" aria-expanded="false">
-                        <span>האם ניתן לקבל שירות בשטח?</span>
-                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq__answer">
-                        <p>בהחלט. אנו מספקים שירות שטח מקצועי באתר הלקוח. הצוות שלנו מגיע עם כלים וציוד מתקדם לאבחון ותיקון במקום. השירות זמין בבאר שבע וכל אזור הדרום.</p>
-                    </div>
-                </div>
-
-                <div class="faq__item">
-                    <button class="faq__question" aria-expanded="false">
-                        <span>האם יש אחריות על התיקון?</span>
-                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq__answer">
-                        <p>כן, אנו נותנים אחריות על כל תיקון שאנו מבצעים. תקופת האחריות משתנה בהתאם לסוג התיקון ולציוד. פרטים מלאים ניתנים עם קבלת הציוד המתוקן.</p>
-                    </div>
-                </div>
-
-                <div class="faq__item">
-                    <button class="faq__question" aria-expanded="false">
-                        <span>אילו סוגי מנועים אתם מתקנים?</span>
-                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq__answer">
-                        <p>אנו מתקנים ומשפצים מנועים חשמליים מכל הסוגים והגדלים: מנועים חד-פאזיים, מנועים תלת-פאזיים, מנועי DC, מנועי סרוו ועוד. אנו מטפלים במנועים תעשייתיים, מנועים לחקלאות, מנועים למערכות מיזוג ועוד.</p>
-                    </div>
-                </div>
-
-                <div class="faq__item">
-                    <button class="faq__question" aria-expanded="false">
-                        <span>איך מגיעים אליכם?</span>
-                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="faq__answer">
-                        <p>המעבדה שלנו נמצאת ברחוב הפועלים 19, באר שבע. ניתן להגיע בקלות ויש חנייה נוחה. שעות הפעילות: ראשון-חמישי 08:00-17:30, שישי 08:00-13:00.</p>
-                    </div>
-                </div>
+                <div class="faq__item"><button class="faq__question" aria-expanded="false"><span>כמה זמן לוקח תיקון מנוע חשמלי?</span><svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq__answer"><p>זמן התיקון תלוי בסוג התקלה ובגודל המנוע. תיקונים פשוטים יכולים להסתיים תוך יום עבודה, בעוד שליפוף מנוע מלא עשוי לקחת 2-5 ימי עבודה. אנו תמיד מעדכנים את הלקוח מראש לגבי הזמן המשוער.</p></div></div>
+                <div class="faq__item"><button class="faq__question" aria-expanded="false"><span>האם אתם מתקנים משאבות טבולות?</span><svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq__answer"><p>כן, אנו מתמחים בתיקון כל סוגי המשאבות הטבולות כולל משאבות ביוב, משאבות ניקוז ומשאבות למזרקות ובריכות. אנו מבצעים גם פירוק והרכבה בשטח.</p></div></div>
+                <div class="faq__item"><button class="faq__question" aria-expanded="false"><span>האם ניתן לקבל שירות בשטח?</span><svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq__answer"><p>בהחלט. אנו מספקים שירות שטח מקצועי באתר הלקוח. הצוות שלנו מגיע עם כלים וציוד מתקדם לאבחון ותיקון במקום. השירות זמין בבאר שבע וכל אזור הדרום.</p></div></div>
+                <div class="faq__item"><button class="faq__question" aria-expanded="false"><span>האם יש אחריות על התיקון?</span><svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq__answer"><p>כן, אנו נותנים אחריות על כל תיקון שאנו מבצעים. תקופת האחריות משתנה בהתאם לסוג התיקון ולציוד. פרטים מלאים ניתנים עם קבלת הציוד המתוקן.</p></div></div>
+                <div class="faq__item"><button class="faq__question" aria-expanded="false"><span>אילו סוגי מנועים אתם מתקנים?</span><svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq__answer"><p>אנו מתקנים ומשפצים מנועים חשמליים מכל הסוגים והגדלים: מנועים חד-פאזיים, מנועים תלת-פאזיים, מנועי DC, מנועי סרוו ועוד.</p></div></div>
+                <div class="faq__item"><button class="faq__question" aria-expanded="false"><span>איך מגיעים אליכם?</span><svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq__answer"><p>המעבדה שלנו נמצאת ברחוב הפועלים 19, באר שבע. ניתן להגיע בקלות ויש חנייה נוחה. שעות הפעילות: ראשון-חמישי 08:00-17:30, שישי 08:00-13:00.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- CTA SECTION                                -->
-    <!-- ========================================== -->
+    <!-- CTA -->
     <section class="cta" id="cta">
         <div class="cta__bg"></div>
         <div class="container">
@@ -658,26 +313,15 @@
                 <h2 class="cta__title">צריכים תיקון למנוע או משאבה?</h2>
                 <p class="cta__text">הצוות המקצועי שלנו כאן לעזור. צרו קשר עכשיו וקבלו שירות מהיר ומקצועי.</p>
                 <div class="cta__buttons">
-                    <a href="tel:0737432323" class="btn btn--primary btn--lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        התקשר עכשיו
-                    </a>
-                    <a href="https://wa.me/972528945500" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        שלח וואצפ
-                    </a>
-                    <a href="mailto:Electrictools@outlook.co.il" class="btn btn--outline-light btn--lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        שלח אימייל
-                    </a>
+                    <a href="tel:0737432323" class="btn btn--primary btn--lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> התקשר עכשיו</a>
+                    <a href="https://wa.me/972528945500" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> שלח וואצפ</a>
+                    <a href="mailto:Electrictools@outlook.co.il" class="btn btn--outline-light btn--lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> שלח אימייל</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- CONTACT SECTION                            -->
-    <!-- ========================================== -->
+    <!-- CONTACT -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
@@ -685,188 +329,53 @@
                 <h2 class="section-header__title">נשמח לעמוד לשירותכם</h2>
                 <p class="section-header__text">השאירו פרטים ונחזור אליכם בהקדם, או צרו קשר ישירות</p>
             </div>
-
             <div class="contact__wrapper">
-                <!-- Contact Info -->
                 <div class="contact__info" data-animate="fade-right">
-                    <div class="contact__info-item">
-                        <div class="contact__info-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        </div>
-                        <div>
-                            <h3>כתובת</h3>
-                            <p>הפועלים 19, באר שבע</p>
-                        </div>
-                    </div>
-
-                    <div class="contact__info-item">
-                        <div class="contact__info-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        </div>
-                        <div>
-                            <h3>טלפון</h3>
-                            <p><a href="tel:0737432323">073-7432323</a></p>
-                            <p><a href="tel:0528945500">052-8945500</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact__info-item">
-                        <div class="contact__info-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        </div>
-                        <div>
-                            <h3>אימייל</h3>
-                            <p><a href="mailto:Electrictools@outlook.co.il">Electrictools@outlook.co.il</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact__info-item">
-                        <div class="contact__info-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        </div>
-                        <div>
-                            <h3>שעות פעילות</h3>
-                            <p>ראשון - חמישי: 08:00-17:30</p>
-                            <p>שישי: 08:00-13:00</p>
-                            <p>שבת: סגור</p>
-                        </div>
-                    </div>
-
+                    <div class="contact__info-item"><div class="contact__info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h3>כתובת</h3><p>הפועלים 19, באר שבע</p></div></div>
+                    <div class="contact__info-item"><div class="contact__info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><h3>טלפון</h3><p><a href="tel:0737432323">073-7432323</a></p><p><a href="tel:0528945500">052-8945500</a></p></div></div>
+                    <div class="contact__info-item"><div class="contact__info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h3>אימייל</h3><p><a href="mailto:Electrictools@outlook.co.il">Electrictools@outlook.co.il</a></p></div></div>
+                    <div class="contact__info-item"><div class="contact__info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h3>שעות פעילות</h3><p>ראשון - חמישי: 08:00-17:30</p><p>שישי: 08:00-13:00</p><p>שבת: סגור</p></div></div>
                     <div class="contact__quick-actions">
-                        <a href="tel:0737432323" class="btn btn--primary btn--block">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            073-7432323
-                        </a>
-                        <a href="https://wa.me/972528945500" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--block">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            שלח וואצפ
-                        </a>
+                        <a href="tel:0737432323" class="btn btn--primary btn--block"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 073-7432323</a>
+                        <a href="https://wa.me/972528945500" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--block"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> שלח וואצפ</a>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
                 <form class="contact__form" id="contactForm" data-animate="fade-left" novalidate>
                     <h3 class="contact__form-title">קבל הצעת מחיר</h3>
-                    <div class="contact__form-group">
-                        <label for="name" class="contact__label">שם מלא *</label>
-                        <input type="text" id="name" name="name" class="contact__input" placeholder="הכנס שם מלא" required autocomplete="name">
-                    </div>
-                    <div class="contact__form-group">
-                        <label for="phone" class="contact__label">טלפון *</label>
-                        <input type="tel" id="phone" name="phone" class="contact__input" placeholder="הכנס מספר טלפון" required autocomplete="tel">
-                    </div>
-                    <div class="contact__form-group">
-                        <label for="email" class="contact__label">אימייל</label>
-                        <input type="email" id="email" name="email" class="contact__input" placeholder="הכנס כתובת אימייל" autocomplete="email">
-                    </div>
-                    <div class="contact__form-group">
-                        <label for="service" class="contact__label">סוג השירות</label>
-                        <select id="service" name="service" class="contact__input contact__select">
-                            <option value="">בחר סוג שירות</option>
-                            <option value="motors">תיקון מנועים חשמליים</option>
-                            <option value="pumps">תיקון משאבות מים</option>
-                            <option value="tools">תיקון כלי עבודה</option>
-                            <option value="kitchen">ציוד מטבח תעשייתי</option>
-                            <option value="maintenance">אחזקה מונעת</option>
-                            <option value="field">שירות שטח</option>
-                            <option value="other">אחר</option>
-                        </select>
-                    </div>
-                    <div class="contact__form-group">
-                        <label for="message" class="contact__label">פרטים נוספים</label>
-                        <textarea id="message" name="message" class="contact__input contact__textarea" placeholder="ספר לנו על הציוד שצריך תיקון" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--block btn--lg">
-                        שלח הצעת מחיר
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                    </button>
+                    <div class="contact__form-group"><label for="name" class="contact__label">שם מלא *</label><input type="text" id="name" name="name" class="contact__input" placeholder="הכנס שם מלא" required autocomplete="name"></div>
+                    <div class="contact__form-group"><label for="phone" class="contact__label">טלפון *</label><input type="tel" id="phone" name="phone" class="contact__input" placeholder="הכנס מספר טלפון" required autocomplete="tel"></div>
+                    <div class="contact__form-group"><label for="email" class="contact__label">אימייל</label><input type="email" id="email" name="email" class="contact__input" placeholder="הכנס כתובת אימייל" autocomplete="email"></div>
+                    <div class="contact__form-group"><label for="service" class="contact__label">סוג השירות</label><select id="service" name="service" class="contact__input contact__select"><option value="">בחר סוג שירות</option><option value="motors">תיקון מנועים חשמליים</option><option value="pumps">תיקון משאבות מים</option><option value="tools">תיקון כלי עבודה</option><option value="kitchen">ציוד מטבח תעשייתי</option><option value="maintenance">אחזקה מונעת</option><option value="field">שירות שטח</option><option value="other">אחר</option></select></div>
+                    <div class="contact__form-group"><label for="message" class="contact__label">פרטים נוספים</label><textarea id="message" name="message" class="contact__input contact__textarea" placeholder="ספר לנו על הציוד שצריך תיקון" rows="4"></textarea></div>
+                    <button type="submit" class="btn btn--primary btn--block btn--lg">שלח הצעת מחיר <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- FOOTER                                     -->
-    <!-- ========================================== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <!-- Logo בפוטר - רק תמונה -->
-                    <a href="#hero" class="footer__logo" aria-label="ELECTRIC TOOLS">
-                        <img
-                            src="images/logo.png"
-                            alt="ELECTRIC TOOLS - לוגו"
-                            class="footer__logo-img"
-                            width="130"
-                            height="40"
-                            loading="lazy"
-                        >
-                    </a>
+                    <a href="#hero" class="footer__logo" aria-label="ELECTRIC TOOLS"><img src="images/logo.png" alt="ELECTRIC TOOLS - לוגו" class="footer__logo-img" width="130" height="40" loading="lazy"></a>
                     <p class="footer__desc">מעבדה מקצועית לתיקון ושיפוץ ציוד חשמלי ותעשייתי בבאר שבע והדרום. שירות אמין ומקצועי.</p>
                 </div>
-
-                <div class="footer__links">
-                    <h4>ניווט מהיר</h4>
-                    <ul>
-                        <li><a href="#hero">דף הבית</a></li>
-                        <li><a href="#services">שירותים</a></li>
-                        <li><a href="#gallery">עבודות</a></li>
-                        <li><a href="#why-us">אודות</a></li>
-                        <li><a href="#contact">צור קשר</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__links">
-                    <h4>שירותים</h4>
-                    <ul>
-                        <li><a href="#services">תיקון מנועים חשמליים</a></li>
-                        <li><a href="#services">תיקון משאבות מים</a></li>
-                        <li><a href="#services">תיקון כלי עבודה</a></li>
-                        <li><a href="#services">ציוד מטבח תעשייתי</a></li>
-                        <li><a href="#services">אחזקה מונעת</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__contact">
-                    <h4>צור קשר</h4>
-                    <p>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        הפועלים 19, באר שבע
-                    </p>
-                    <p>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <a href="tel:0737432323">073-7432323</a>
-                    </p>
-                    <p>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        <a href="mailto:Electrictools@outlook.co.il">Electrictools@outlook.co.il</a>
-                    </p>
-                </div>
+                <div class="footer__links"><h4>ניווט מהיר</h4><ul><li><a href="#hero">דף הבית</a></li><li><a href="#services">שירותים</a></li><li><a href="#gallery">עבודות</a></li><li><a href="#why-us">אודות</a></li><li><a href="#contact">צור קשר</a></li></ul></div>
+                <div class="footer__links"><h4>שירותים</h4><ul><li><a href="#services">תיקון מנועים חשמליים</a></li><li><a href="#services">תיקון משאבות מים</a></li><li><a href="#services">תיקון כלי עבודה</a></li><li><a href="#services">ציוד מטבח תעשייתי</a></li><li><a href="#services">אחזקה מונעת</a></li></ul></div>
+                <div class="footer__contact"><h4>צור קשר</h4><p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> הפועלים 19, באר שבע</p><p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:0737432323">073-7432323</a></p><p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <a href="mailto:Electrictools@outlook.co.il">Electrictools@outlook.co.il</a></p></div>
             </div>
-
-            <div class="footer__bottom">
-                <p>&copy; <span id="currentYear"></span> ELECTRIC TOOLS. כל הזכויות שמורות.</p>
-            </div>
+            <div class="footer__bottom"><p>&copy; <span id="currentYear"></span> ELECTRIC TOOLS. כל הזכויות שמורות.</p></div>
         </div>
     </footer>
 
-    <!-- ========================================== -->
-    <!-- FLOATING ACTION BUTTONS                    -->
-    <!-- ========================================== -->
+    <!-- FLOATING BUTTONS -->
     <div class="floating-buttons" id="floatingButtons">
-        <a href="tel:0528945500" class="floating-btn floating-btn--phone" aria-label="התקשר אלינו">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </a>
-        <a href="https://wa.me/972528945500" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn--whatsapp" aria-label="שלח הודעת וואצפ">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </a>
-        <a href="mailto:Electrictools@outlook.co.il" class="floating-btn floating-btn--email" aria-label="שלח אימייל">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </a>
+        <a href="tel:0528945500" class="floating-btn floating-btn--phone" aria-label="התקשר אלינו"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        <a href="https://wa.me/972528945500" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn--whatsapp" aria-label="שלח הודעת וואצפ"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="mailto:Electrictools@outlook.co.il" class="floating-btn floating-btn--email" aria-label="שלח אימייל"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
     </div>
 
-    <!-- ========== JavaScript ========== -->
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>
