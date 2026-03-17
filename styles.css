@@ -1,33 +1,33 @@
 /* ============================================================
    ELECTRIC TOOLS - Professional Website Stylesheet
-   NEW COLOR SCHEME: Graphite & Electric Red
+   COLOR SCHEME: Professional Blue
    ============================================================ */
 
 :root {
     /* =============================================
-       ערכת צבעים חדשה - גרפיט ואדום חשמלי
+       ערכת צבעים - כחול מקצועי
        ============================================= */
-    --color-primary: #1E272E;
-    --color-primary-light: #2C3A47;
-    --color-primary-dark: #141B20;
-    --color-secondary: #485460;
-    --color-secondary-light: #808E9B;
-    --color-accent: #E84118;
-    --color-accent-hover: #C23616;
-    --color-accent-light: #FFEAE4;
-    --color-blue: #0097E6;
-    --color-blue-light: #00A8FF;
+    --color-primary: #0F2B46;
+    --color-primary-light: #1A3D5C;
+    --color-primary-dark: #091D30;
+    --color-secondary: #3D5A80;
+    --color-secondary-light: #6B8DB5;
+    --color-accent: #2196F3;
+    --color-accent-hover: #1976D2;
+    --color-accent-light: #E3F2FD;
+    --color-blue: #1565C0;
+    --color-blue-light: #1E88E5;
     --color-whatsapp: #25D366;
     --color-whatsapp-hover: #1FB855;
     --color-white: #FFFFFF;
     --color-bg: #FFFFFF;
-    --color-bg-alt: #F1F2F6;
-    --color-bg-dark: #1E272E;
-    --color-text: #1E272E;
-    --color-text-light: #808E9B;
-    --color-text-muted: #A4B0BD;
-    --color-border: #DFE4EA;
-    --color-border-light: #EEF0F4;
+    --color-bg-alt: #F0F4F8;
+    --color-bg-dark: #0F2B46;
+    --color-text: #1A2332;
+    --color-text-light: #6B7C93;
+    --color-text-muted: #9DAFC2;
+    --color-border: #D6E0EB;
+    --color-border-light: #E8EEF4;
     --color-success: #2ED573;
     --color-error: #FF4757;
 
