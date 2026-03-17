@@ -116,8 +116,8 @@ input,select,textarea{font-family:inherit;font-size:16px}
 .btn--whatsapp{background:var(--color-whatsapp);color:var(--color-white);border-color:var(--color-whatsapp)}
 .btn--whatsapp:hover{background:var(--color-whatsapp-hover);border-color:var(--color-whatsapp-hover);transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,0.35)}
 
-.btn--outline{background:var(--color-blue);color:var(--color-white);border-color:var(--color-blue)}
-.btn--outline:hover{background:var(--color-blue-light);color:var(--color-white);border-color:var(--color-blue-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,151,230,0.35)}
+.btn--outline{background:#FF6B35;color:var(--color-white);border-color:#FF6B35}
+.btn--outline:hover{background:#E85A2A;color:var(--color-white);border-color:#E85A2A;transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,107,53,0.4)}
 
 .btn--outline-light{background:transparent;color:var(--color-white);border-color:rgba(255,255,255,0.35)}
 .btn--outline-light:hover{background:var(--color-white);color:var(--color-primary);border-color:var(--color-white);transform:translateY(-2px)}
